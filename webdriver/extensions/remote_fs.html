@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.extensions.remote_fs API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.extensions.remote_fs</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import base64
+from typing import Optional, TypeVar
+
+from selenium import webdriver
+from selenium.common.exceptions import InvalidArgumentException
+
+from ..mobilecommand import MobileCommand as Command
+
+T = TypeVar(&#39;T&#39;, bound=&#39;RemoteFS&#39;)
+
+
+class RemoteFS(webdriver.Remote):
+    def pull_file(self, path: str) -&gt; str:
+        &#34;&#34;&#34;Retrieves the file at `path`.
+
+        Args:
+            path (str): the path to the file on the device
+
+        Returns:
+            str: The file&#39;s contents encoded as Base64.
+        &#34;&#34;&#34;
+        data = {
+            &#39;path&#39;: path,
+        }
+        return self.execute(Command.PULL_FILE, data)[&#39;value&#39;]
+
+    def pull_folder(self, path: str) -&gt; str:
+        &#34;&#34;&#34;Retrieves a folder at `path`.
+
+        Args:
+            path (str): the path to the folder on the device
+
+        Returns:
+            str: The folder&#39;s contents zipped and encoded as Base64.
+        &#34;&#34;&#34;
+        data = {
+            &#39;path&#39;: path,
+        }
+        return self.execute(Command.PULL_FOLDER, data)[&#39;value&#39;]
+
+    def push_file(self, destination_path: str,
+                  base64data: Optional[str] = None, source_path: Optional[str] = None) -&gt; T:
+        &#34;&#34;&#34;Puts the data from the file at `source_path`, encoded as Base64, in the file specified as `path`.
+
+        Specify either `base64data` or `source_path`, if both specified default to `source_path`
+
+        Args:
+            destination_path (str): the location on the device/simulator where the local file contents should be saved
+            base64data (:obj:`str`, optional): file contents, encoded as Base64, to be written to the file on the device/simulator
+            source_path (:obj:`str`, optional): local file path for the file to be loaded on device
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        if source_path is None and base64data is None:
+            raise InvalidArgumentException(&#39;Must either pass base64 data or a local file path&#39;)
+
+        if source_path is not None:
+            try:
+                with open(source_path, &#39;rb&#39;) as f:
+                    file_data = f.read()
+            except IOError as e:
+                message = f&#39;source_path &#34;{source_path}&#34; could not be found. Are you sure the file exists?&#39;
+                raise InvalidArgumentException(message) from e
+            base64data = base64.b64encode(file_data).decode(&#39;utf-8&#39;)
+
+        data = {
+            &#39;path&#39;: destination_path,
+            &#39;data&#39;: base64data,
+        }
+        self.execute(Command.PUSH_FILE, data)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        self.command_executor._commands[Command.PULL_FILE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/pull_file&#39;)
+        self.command_executor._commands[Command.PULL_FOLDER] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/pull_folder&#39;)
+        self.command_executor._commands[Command.PUSH_FILE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/push_file&#39;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.extensions.remote_fs.RemoteFS"><code class="flex name class">
+<span>class <span class="ident">RemoteFS</span></span>
+<span>(</span><span>command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=None, browser_profile=None, proxy=None, keep_alive=False, file_detector=None, options=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Controls a browser by sending commands to a remote server.
+This server is expected to be running the WebDriver wire protocol
+as defined at
+<a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol">https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol</a></p>
+<p>:Attributes:
+- session_id - String ID of the browser session started and controlled by this WebDriver.
+- capabilities - Dictionaty of effective capabilities of this browser session as returned
+by the remote server. See <a href="https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities">https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities</a>
+- command_executor - remote_connection.RemoteConnection object used to execute commands.
+- error_handler - errorhandler.ErrorHandler object used to handle errors.</p>
+<p>Create a new driver that will issue commands using the wire protocol.</p>
+<p>:Args:
+- command_executor - Either a string representing URL of the remote server or a custom
+remote_connection.RemoteConnection object. Defaults to 'http://127.0.0.1:4444/wd/hub'.
+- desired_capabilities - A dictionary of capabilities to request when
+starting the browser session. Required parameter.
+- browser_profile - A selenium.webdriver.firefox.firefox_profile.FirefoxProfile object.
+Only used if Firefox is requested. Optional.
+- proxy - A selenium.webdriver.common.proxy.Proxy object. The browser session will
+be started with given proxy settings, if possible. Optional.
+- keep_alive - Whether to configure remote_connection.RemoteConnection to use
+HTTP keep-alive. Defaults to False.
+- file_detector - Pass custom file detector object during instantiation. If None,
+then default LocalFileDetector() will be used.
+- options - instance of a driver options.Options class</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RemoteFS(webdriver.Remote):
+    def pull_file(self, path: str) -&gt; str:
+        &#34;&#34;&#34;Retrieves the file at `path`.
+
+        Args:
+            path (str): the path to the file on the device
+
+        Returns:
+            str: The file&#39;s contents encoded as Base64.
+        &#34;&#34;&#34;
+        data = {
+            &#39;path&#39;: path,
+        }
+        return self.execute(Command.PULL_FILE, data)[&#39;value&#39;]
+
+    def pull_folder(self, path: str) -&gt; str:
+        &#34;&#34;&#34;Retrieves a folder at `path`.
+
+        Args:
+            path (str): the path to the folder on the device
+
+        Returns:
+            str: The folder&#39;s contents zipped and encoded as Base64.
+        &#34;&#34;&#34;
+        data = {
+            &#39;path&#39;: path,
+        }
+        return self.execute(Command.PULL_FOLDER, data)[&#39;value&#39;]
+
+    def push_file(self, destination_path: str,
+                  base64data: Optional[str] = None, source_path: Optional[str] = None) -&gt; T:
+        &#34;&#34;&#34;Puts the data from the file at `source_path`, encoded as Base64, in the file specified as `path`.
+
+        Specify either `base64data` or `source_path`, if both specified default to `source_path`
+
+        Args:
+            destination_path (str): the location on the device/simulator where the local file contents should be saved
+            base64data (:obj:`str`, optional): file contents, encoded as Base64, to be written to the file on the device/simulator
+            source_path (:obj:`str`, optional): local file path for the file to be loaded on device
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        if source_path is None and base64data is None:
+            raise InvalidArgumentException(&#39;Must either pass base64 data or a local file path&#39;)
+
+        if source_path is not None:
+            try:
+                with open(source_path, &#39;rb&#39;) as f:
+                    file_data = f.read()
+            except IOError as e:
+                message = f&#39;source_path &#34;{source_path}&#34; could not be found. Are you sure the file exists?&#39;
+                raise InvalidArgumentException(message) from e
+            base64data = base64.b64encode(file_data).decode(&#39;utf-8&#39;)
+
+        data = {
+            &#39;path&#39;: destination_path,
+            &#39;data&#39;: base64data,
+        }
+        self.execute(Command.PUSH_FILE, data)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        self.command_executor._commands[Command.PULL_FILE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/pull_file&#39;)
+        self.command_executor._commands[Command.PULL_FOLDER] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/pull_folder&#39;)
+        self.command_executor._commands[Command.PUSH_FILE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/push_file&#39;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>selenium.webdriver.remote.webdriver.WebDriver</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver">WebDriver</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="appium.webdriver.extensions.remote_fs.RemoteFS.pull_file"><code class="name flex">
+<span>def <span class="ident">pull_file</span></span>(<span>self, path)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Retrieves the file at <code>path</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>the path to the file on the device</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>The file's contents encoded as Base64.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pull_file(self, path: str) -&gt; str:
+    &#34;&#34;&#34;Retrieves the file at `path`.
+
+    Args:
+        path (str): the path to the file on the device
+
+    Returns:
+        str: The file&#39;s contents encoded as Base64.
+    &#34;&#34;&#34;
+    data = {
+        &#39;path&#39;: path,
+    }
+    return self.execute(Command.PULL_FILE, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.remote_fs.RemoteFS.pull_folder"><code class="name flex">
+<span>def <span class="ident">pull_folder</span></span>(<span>self, path)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Retrieves a folder at <code>path</code>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>the path to the folder on the device</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>The folder's contents zipped and encoded as Base64.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pull_folder(self, path: str) -&gt; str:
+    &#34;&#34;&#34;Retrieves a folder at `path`.
+
+    Args:
+        path (str): the path to the folder on the device
+
+    Returns:
+        str: The folder&#39;s contents zipped and encoded as Base64.
+    &#34;&#34;&#34;
+    data = {
+        &#39;path&#39;: path,
+    }
+    return self.execute(Command.PULL_FOLDER, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.remote_fs.RemoteFS.push_file"><code class="name flex">
+<span>def <span class="ident">push_file</span></span>(<span>self, destination_path, base64data=None, source_path=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Puts the data from the file at <code>source_path</code>, encoded as Base64, in the file specified as <code>path</code>.</p>
+<p>Specify either <code>base64data</code> or <code>source_path</code>, if both specified default to <code>source_path</code></p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>destination_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>the location on the device/simulator where the local file contents should be saved</dd>
+</dl>
+<p>base64data (:obj:<code>str</code>, optional): file contents, encoded as Base64, to be written to the file on the device/simulator
+source_path (:obj:<code>str</code>, optional): local file path for the file to be loaded on device</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def push_file(self, destination_path: str,
+              base64data: Optional[str] = None, source_path: Optional[str] = None) -&gt; T:
+    &#34;&#34;&#34;Puts the data from the file at `source_path`, encoded as Base64, in the file specified as `path`.
+
+    Specify either `base64data` or `source_path`, if both specified default to `source_path`
+
+    Args:
+        destination_path (str): the location on the device/simulator where the local file contents should be saved
+        base64data (:obj:`str`, optional): file contents, encoded as Base64, to be written to the file on the device/simulator
+        source_path (:obj:`str`, optional): local file path for the file to be loaded on device
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    if source_path is None and base64data is None:
+        raise InvalidArgumentException(&#39;Must either pass base64 data or a local file path&#39;)
+
+    if source_path is not None:
+        try:
+            with open(source_path, &#39;rb&#39;) as f:
+                file_data = f.read()
+        except IOError as e:
+            message = f&#39;source_path &#34;{source_path}&#34; could not be found. Are you sure the file exists?&#39;
+            raise InvalidArgumentException(message) from e
+        base64data = base64.b64encode(file_data).decode(&#39;utf-8&#39;)
+
+    data = {
+        &#39;path&#39;: destination_path,
+        &#39;data&#39;: base64data,
+    }
+    self.execute(Command.PUSH_FILE, data)
+    return self</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver.extensions" href="index.html">appium.webdriver.extensions</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS" href="#appium.webdriver.extensions.remote_fs.RemoteFS">RemoteFS</a></code></h4>
+<ul class="">
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.pull_file" href="#appium.webdriver.extensions.remote_fs.RemoteFS.pull_file">pull_file</a></code></li>
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.pull_folder" href="#appium.webdriver.extensions.remote_fs.RemoteFS.pull_folder">pull_folder</a></code></li>
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.push_file" href="#appium.webdriver.extensions.remote_fs.RemoteFS.push_file">push_file</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

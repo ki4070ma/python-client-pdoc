@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.extensions.applications API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.extensions.applications</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Any, Dict, TypeVar
+
+from selenium import webdriver
+
+from ..mobilecommand import MobileCommand as Command
+
+T = TypeVar(&#39;T&#39;, bound=&#39;Applications&#39;)
+
+
+class Applications(webdriver.Remote):
+    def background_app(self, seconds: int) -&gt; T:
+        &#34;&#34;&#34;Puts the application in the background on the device for a certain duration.
+
+        Args:
+            seconds (int): the duration for the application to remain in the background
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;seconds&#39;: seconds,
+        }
+        self.execute(Command.BACKGROUND, data)
+        return self
+
+    def is_app_installed(self, bundle_id: str) -&gt; bool:
+        &#34;&#34;&#34;Checks whether the application specified by `bundle_id` is installed on the device.
+
+        Args:
+            bundle_id (str): the id of the application to query
+
+        Returns:
+            bool: `True` if app is installed
+        &#34;&#34;&#34;
+        data = {
+            &#39;bundleId&#39;: bundle_id,
+        }
+        return self.execute(Command.IS_APP_INSTALLED, data)[&#39;value&#39;]
+
+    def install_app(self, app_path: str, **options: Any) -&gt; T:
+        &#34;&#34;&#34;Install the application found at `app_path` on the device.
+
+        Args:
+            app_path (str): the local or remote path to the application to install
+
+        Keyword Args:
+            replace (bool): [Android only] whether to reinstall/upgrade the package if it is
+                already present on the device under test. True by default
+            timeout (int): [Android only] how much time to wait for the installation to complete.
+                60000ms by default.
+            allowTestPackages (bool): [Android only] whether to allow installation of packages marked
+                as test in the manifest. False by default
+            useSdcard (bool): [Android only] whether to use the SD card to install the app. False by default
+            grantPermissions (bool): [Android only] whether to automatically grant application permissions
+                on Android 6+ after the installation completes. False by default
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appPath&#39;: app_path,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        self.execute(Command.INSTALL_APP, data)
+        return self
+
+    def remove_app(self, app_id: str, **options: Any) -&gt; T:
+        &#34;&#34;&#34;Remove the specified application from the device.
+
+        Args:
+            app_id (str): the application id to be removed
+
+        Keyword Args:
+            keepData (bool): [Android only] whether to keep application data and caches after it is uninstalled.
+                False by default
+            timeout (int): [Android only] how much time to wait for the uninstall to complete.
+                20000ms by default.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appId&#39;: app_id,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        self.execute(Command.REMOVE_APP, data)
+        return self
+
+    def launch_app(self) -&gt; T:
+        &#34;&#34;&#34;Start on the device the application specified in the desired capabilities.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        self.execute(Command.LAUNCH_APP)
+        return self
+
+    def close_app(self) -&gt; T:
+        &#34;&#34;&#34;Stop the running application, specified in the desired capabilities, on
+        the device.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        self.execute(Command.CLOSE_APP)
+        return self
+
+    def terminate_app(self, app_id: str, **options: Any) -&gt; bool:
+        &#34;&#34;&#34;Terminates the application if it is running.
+
+        Args:
+            app_id (str): the application id to be terminates
+
+        Keyword Args:
+            `timeout` (int): [Android only] how much time to wait for the uninstall to complete.
+                500ms by default.
+
+        Returns:
+            bool: True if the app has been successfully terminated
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appId&#39;: app_id,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        return self.execute(Command.TERMINATE_APP, data)[&#39;value&#39;]
+
+    def activate_app(self, app_id: str) -&gt; T:
+        &#34;&#34;&#34;Activates the application if it is not running
+        or is running in the background.
+
+        Args:
+            app_id (str): the application id to be activated
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;appId&#39;: app_id,
+        }
+        self.execute(Command.ACTIVATE_APP, data)
+        return self
+
+    def query_app_state(self, app_id: str) -&gt; int:
+        &#34;&#34;&#34;Queries the state of the application.
+
+        Args:
+            app_id (str): the application id to be queried
+
+        Returns:
+            One of possible application state constants. See ApplicationState
+            class for more details.
+        &#34;&#34;&#34;
+        data = {
+            &#39;appId&#39;: app_id,
+        }
+        return self.execute(Command.QUERY_APP_STATE, data)[&#39;value&#39;]
+
+    def app_strings(self, language: str = None, string_file: str = None) -&gt; Dict[str, str]:
+        &#34;&#34;&#34;Returns the application strings from the device for the specified
+        language.
+
+        Args:
+            language (str): strings language code
+            string_file (str): the name of the string file to query
+
+        Returns:
+            Dict[str, str]: The key is string id and the value is the content.
+        &#34;&#34;&#34;
+        data = {}
+        if language is not None:
+            data[&#39;language&#39;] = language
+        if string_file is not None:
+            data[&#39;stringFile&#39;] = string_file
+        return self.execute(Command.GET_APP_STRINGS, data)[&#39;value&#39;]
+
+    def reset(self) -&gt; T:
+        &#34;&#34;&#34;Resets the current application on the device.
+        &#34;&#34;&#34;
+        self.execute(Command.RESET)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        self.command_executor._commands[Command.BACKGROUND] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/background&#39;)
+        self.command_executor._commands[Command.IS_APP_INSTALLED] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/app_installed&#39;)
+        self.command_executor._commands[Command.INSTALL_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/install_app&#39;)
+        self.command_executor._commands[Command.REMOVE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/remove_app&#39;)
+        self.command_executor._commands[Command.TERMINATE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/terminate_app&#39;)
+        self.command_executor._commands[Command.ACTIVATE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/activate_app&#39;)
+        self.command_executor._commands[Command.QUERY_APP_STATE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/app_state&#39;)
+        self.command_executor._commands[Command.GET_APP_STRINGS] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/strings&#39;)
+        self.command_executor._commands[Command.RESET] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/reset&#39;)
+        self.command_executor._commands[Command.LAUNCH_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/launch&#39;)
+        self.command_executor._commands[Command.CLOSE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/close&#39;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.extensions.applications.Applications"><code class="flex name class">
+<span>class <span class="ident">Applications</span></span>
+<span>(</span><span>command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=None, browser_profile=None, proxy=None, keep_alive=False, file_detector=None, options=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Controls a browser by sending commands to a remote server.
+This server is expected to be running the WebDriver wire protocol
+as defined at
+<a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol">https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol</a></p>
+<p>:Attributes:
+- session_id - String ID of the browser session started and controlled by this WebDriver.
+- capabilities - Dictionaty of effective capabilities of this browser session as returned
+by the remote server. See <a href="https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities">https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities</a>
+- command_executor - remote_connection.RemoteConnection object used to execute commands.
+- error_handler - errorhandler.ErrorHandler object used to handle errors.</p>
+<p>Create a new driver that will issue commands using the wire protocol.</p>
+<p>:Args:
+- command_executor - Either a string representing URL of the remote server or a custom
+remote_connection.RemoteConnection object. Defaults to 'http://127.0.0.1:4444/wd/hub'.
+- desired_capabilities - A dictionary of capabilities to request when
+starting the browser session. Required parameter.
+- browser_profile - A selenium.webdriver.firefox.firefox_profile.FirefoxProfile object.
+Only used if Firefox is requested. Optional.
+- proxy - A selenium.webdriver.common.proxy.Proxy object. The browser session will
+be started with given proxy settings, if possible. Optional.
+- keep_alive - Whether to configure remote_connection.RemoteConnection to use
+HTTP keep-alive. Defaults to False.
+- file_detector - Pass custom file detector object during instantiation. If None,
+then default LocalFileDetector() will be used.
+- options - instance of a driver options.Options class</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Applications(webdriver.Remote):
+    def background_app(self, seconds: int) -&gt; T:
+        &#34;&#34;&#34;Puts the application in the background on the device for a certain duration.
+
+        Args:
+            seconds (int): the duration for the application to remain in the background
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;seconds&#39;: seconds,
+        }
+        self.execute(Command.BACKGROUND, data)
+        return self
+
+    def is_app_installed(self, bundle_id: str) -&gt; bool:
+        &#34;&#34;&#34;Checks whether the application specified by `bundle_id` is installed on the device.
+
+        Args:
+            bundle_id (str): the id of the application to query
+
+        Returns:
+            bool: `True` if app is installed
+        &#34;&#34;&#34;
+        data = {
+            &#39;bundleId&#39;: bundle_id,
+        }
+        return self.execute(Command.IS_APP_INSTALLED, data)[&#39;value&#39;]
+
+    def install_app(self, app_path: str, **options: Any) -&gt; T:
+        &#34;&#34;&#34;Install the application found at `app_path` on the device.
+
+        Args:
+            app_path (str): the local or remote path to the application to install
+
+        Keyword Args:
+            replace (bool): [Android only] whether to reinstall/upgrade the package if it is
+                already present on the device under test. True by default
+            timeout (int): [Android only] how much time to wait for the installation to complete.
+                60000ms by default.
+            allowTestPackages (bool): [Android only] whether to allow installation of packages marked
+                as test in the manifest. False by default
+            useSdcard (bool): [Android only] whether to use the SD card to install the app. False by default
+            grantPermissions (bool): [Android only] whether to automatically grant application permissions
+                on Android 6+ after the installation completes. False by default
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appPath&#39;: app_path,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        self.execute(Command.INSTALL_APP, data)
+        return self
+
+    def remove_app(self, app_id: str, **options: Any) -&gt; T:
+        &#34;&#34;&#34;Remove the specified application from the device.
+
+        Args:
+            app_id (str): the application id to be removed
+
+        Keyword Args:
+            keepData (bool): [Android only] whether to keep application data and caches after it is uninstalled.
+                False by default
+            timeout (int): [Android only] how much time to wait for the uninstall to complete.
+                20000ms by default.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appId&#39;: app_id,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        self.execute(Command.REMOVE_APP, data)
+        return self
+
+    def launch_app(self) -&gt; T:
+        &#34;&#34;&#34;Start on the device the application specified in the desired capabilities.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        self.execute(Command.LAUNCH_APP)
+        return self
+
+    def close_app(self) -&gt; T:
+        &#34;&#34;&#34;Stop the running application, specified in the desired capabilities, on
+        the device.
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        self.execute(Command.CLOSE_APP)
+        return self
+
+    def terminate_app(self, app_id: str, **options: Any) -&gt; bool:
+        &#34;&#34;&#34;Terminates the application if it is running.
+
+        Args:
+            app_id (str): the application id to be terminates
+
+        Keyword Args:
+            `timeout` (int): [Android only] how much time to wait for the uninstall to complete.
+                500ms by default.
+
+        Returns:
+            bool: True if the app has been successfully terminated
+        &#34;&#34;&#34;
+        data: Dict[str, Any] = {
+            &#39;appId&#39;: app_id,
+        }
+        if options:
+            data.update({&#39;options&#39;: options})
+        return self.execute(Command.TERMINATE_APP, data)[&#39;value&#39;]
+
+    def activate_app(self, app_id: str) -&gt; T:
+        &#34;&#34;&#34;Activates the application if it is not running
+        or is running in the background.
+
+        Args:
+            app_id (str): the application id to be activated
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;appId&#39;: app_id,
+        }
+        self.execute(Command.ACTIVATE_APP, data)
+        return self
+
+    def query_app_state(self, app_id: str) -&gt; int:
+        &#34;&#34;&#34;Queries the state of the application.
+
+        Args:
+            app_id (str): the application id to be queried
+
+        Returns:
+            One of possible application state constants. See ApplicationState
+            class for more details.
+        &#34;&#34;&#34;
+        data = {
+            &#39;appId&#39;: app_id,
+        }
+        return self.execute(Command.QUERY_APP_STATE, data)[&#39;value&#39;]
+
+    def app_strings(self, language: str = None, string_file: str = None) -&gt; Dict[str, str]:
+        &#34;&#34;&#34;Returns the application strings from the device for the specified
+        language.
+
+        Args:
+            language (str): strings language code
+            string_file (str): the name of the string file to query
+
+        Returns:
+            Dict[str, str]: The key is string id and the value is the content.
+        &#34;&#34;&#34;
+        data = {}
+        if language is not None:
+            data[&#39;language&#39;] = language
+        if string_file is not None:
+            data[&#39;stringFile&#39;] = string_file
+        return self.execute(Command.GET_APP_STRINGS, data)[&#39;value&#39;]
+
+    def reset(self) -&gt; T:
+        &#34;&#34;&#34;Resets the current application on the device.
+        &#34;&#34;&#34;
+        self.execute(Command.RESET)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        self.command_executor._commands[Command.BACKGROUND] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/background&#39;)
+        self.command_executor._commands[Command.IS_APP_INSTALLED] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/app_installed&#39;)
+        self.command_executor._commands[Command.INSTALL_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/install_app&#39;)
+        self.command_executor._commands[Command.REMOVE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/remove_app&#39;)
+        self.command_executor._commands[Command.TERMINATE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/terminate_app&#39;)
+        self.command_executor._commands[Command.ACTIVATE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/activate_app&#39;)
+        self.command_executor._commands[Command.QUERY_APP_STATE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/device/app_state&#39;)
+        self.command_executor._commands[Command.GET_APP_STRINGS] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/strings&#39;)
+        self.command_executor._commands[Command.RESET] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/reset&#39;)
+        self.command_executor._commands[Command.LAUNCH_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/launch&#39;)
+        self.command_executor._commands[Command.CLOSE_APP] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/app/close&#39;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>selenium.webdriver.remote.webdriver.WebDriver</li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver">WebDriver</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="appium.webdriver.extensions.applications.Applications.activate_app"><code class="name flex">
+<span>def <span class="ident">activate_app</span></span>(<span>self, app_id)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Activates the application if it is not running
+or is running in the background.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>the application id to be activated</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def activate_app(self, app_id: str) -&gt; T:
+    &#34;&#34;&#34;Activates the application if it is not running
+    or is running in the background.
+
+    Args:
+        app_id (str): the application id to be activated
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    data = {
+        &#39;appId&#39;: app_id,
+    }
+    self.execute(Command.ACTIVATE_APP, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.app_strings"><code class="name flex">
+<span>def <span class="ident">app_strings</span></span>(<span>self, language=None, string_file=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the application strings from the device for the specified
+language.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>language</code></strong> :&ensp;<code>str</code></dt>
+<dd>strings language code</dd>
+<dt><strong><code>string_file</code></strong> :&ensp;<code>str</code></dt>
+<dd>the name of the string file to query</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Dict[str, str]: The key is string id and the value is the content.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def app_strings(self, language: str = None, string_file: str = None) -&gt; Dict[str, str]:
+    &#34;&#34;&#34;Returns the application strings from the device for the specified
+    language.
+
+    Args:
+        language (str): strings language code
+        string_file (str): the name of the string file to query
+
+    Returns:
+        Dict[str, str]: The key is string id and the value is the content.
+    &#34;&#34;&#34;
+    data = {}
+    if language is not None:
+        data[&#39;language&#39;] = language
+    if string_file is not None:
+        data[&#39;stringFile&#39;] = string_file
+    return self.execute(Command.GET_APP_STRINGS, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.background_app"><code class="name flex">
+<span>def <span class="ident">background_app</span></span>(<span>self, seconds)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Puts the application in the background on the device for a certain duration.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>seconds</code></strong> :&ensp;<code>int</code></dt>
+<dd>the duration for the application to remain in the background</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def background_app(self, seconds: int) -&gt; T:
+    &#34;&#34;&#34;Puts the application in the background on the device for a certain duration.
+
+    Args:
+        seconds (int): the duration for the application to remain in the background
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    data = {
+        &#39;seconds&#39;: seconds,
+    }
+    self.execute(Command.BACKGROUND, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.close_app"><code class="name flex">
+<span>def <span class="ident">close_app</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Stop the running application, specified in the desired capabilities, on
+the device.</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def close_app(self) -&gt; T:
+    &#34;&#34;&#34;Stop the running application, specified in the desired capabilities, on
+    the device.
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    self.execute(Command.CLOSE_APP)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.install_app"><code class="name flex">
+<span>def <span class="ident">install_app</span></span>(<span>self, app_path, **options)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Install the application found at <code>app_path</code> on the device.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>the local or remote path to the application to install</dd>
+</dl>
+<p>Keyword Args:
+replace (bool): [Android only] whether to reinstall/upgrade the package if it is
+already present on the device under test. True by default
+timeout (int): [Android only] how much time to wait for the installation to complete.
+60000ms by default.
+allowTestPackages (bool): [Android only] whether to allow installation of packages marked
+as test in the manifest. False by default
+useSdcard (bool): [Android only] whether to use the SD card to install the app. False by default
+grantPermissions (bool): [Android only] whether to automatically grant application permissions
+on Android 6+ after the installation completes. False by default</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def install_app(self, app_path: str, **options: Any) -&gt; T:
+    &#34;&#34;&#34;Install the application found at `app_path` on the device.
+
+    Args:
+        app_path (str): the local or remote path to the application to install
+
+    Keyword Args:
+        replace (bool): [Android only] whether to reinstall/upgrade the package if it is
+            already present on the device under test. True by default
+        timeout (int): [Android only] how much time to wait for the installation to complete.
+            60000ms by default.
+        allowTestPackages (bool): [Android only] whether to allow installation of packages marked
+            as test in the manifest. False by default
+        useSdcard (bool): [Android only] whether to use the SD card to install the app. False by default
+        grantPermissions (bool): [Android only] whether to automatically grant application permissions
+            on Android 6+ after the installation completes. False by default
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    data: Dict[str, Any] = {
+        &#39;appPath&#39;: app_path,
+    }
+    if options:
+        data.update({&#39;options&#39;: options})
+    self.execute(Command.INSTALL_APP, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.is_app_installed"><code class="name flex">
+<span>def <span class="ident">is_app_installed</span></span>(<span>self, bundle_id)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Checks whether the application specified by <code>bundle_id</code> is installed on the device.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bundle_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>the id of the application to query</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd><code>True</code> if app is installed</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_app_installed(self, bundle_id: str) -&gt; bool:
+    &#34;&#34;&#34;Checks whether the application specified by `bundle_id` is installed on the device.
+
+    Args:
+        bundle_id (str): the id of the application to query
+
+    Returns:
+        bool: `True` if app is installed
+    &#34;&#34;&#34;
+    data = {
+        &#39;bundleId&#39;: bundle_id,
+    }
+    return self.execute(Command.IS_APP_INSTALLED, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.launch_app"><code class="name flex">
+<span>def <span class="ident">launch_app</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Start on the device the application specified in the desired capabilities.</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def launch_app(self) -&gt; T:
+    &#34;&#34;&#34;Start on the device the application specified in the desired capabilities.
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    self.execute(Command.LAUNCH_APP)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.query_app_state"><code class="name flex">
+<span>def <span class="ident">query_app_state</span></span>(<span>self, app_id)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Queries the state of the application.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>the application id to be queried</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>One</code> of <code>possible</code> <code>application</code> <code>state</code> <code>constants.</code> <code>See</code> <code>ApplicationState</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<p>class for more details.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def query_app_state(self, app_id: str) -&gt; int:
+    &#34;&#34;&#34;Queries the state of the application.
+
+    Args:
+        app_id (str): the application id to be queried
+
+    Returns:
+        One of possible application state constants. See ApplicationState
+        class for more details.
+    &#34;&#34;&#34;
+    data = {
+        &#39;appId&#39;: app_id,
+    }
+    return self.execute(Command.QUERY_APP_STATE, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.remove_app"><code class="name flex">
+<span>def <span class="ident">remove_app</span></span>(<span>self, app_id, **options)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Remove the specified application from the device.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>the application id to be removed</dd>
+</dl>
+<p>Keyword Args:
+keepData (bool): [Android only] whether to keep application data and caches after it is uninstalled.
+False by default
+timeout (int): [Android only] how much time to wait for the uninstall to complete.
+20000ms by default.</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="../webdriver.html#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_app(self, app_id: str, **options: Any) -&gt; T:
+    &#34;&#34;&#34;Remove the specified application from the device.
+
+    Args:
+        app_id (str): the application id to be removed
+
+    Keyword Args:
+        keepData (bool): [Android only] whether to keep application data and caches after it is uninstalled.
+            False by default
+        timeout (int): [Android only] how much time to wait for the uninstall to complete.
+            20000ms by default.
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    data: Dict[str, Any] = {
+        &#39;appId&#39;: app_id,
+    }
+    if options:
+        data.update({&#39;options&#39;: options})
+    self.execute(Command.REMOVE_APP, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Resets the current application on the device.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset(self) -&gt; T:
+    &#34;&#34;&#34;Resets the current application on the device.
+    &#34;&#34;&#34;
+    self.execute(Command.RESET)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.extensions.applications.Applications.terminate_app"><code class="name flex">
+<span>def <span class="ident">terminate_app</span></span>(<span>self, app_id, **options)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Terminates the application if it is running.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>app_id</code></strong> :&ensp;<code>str</code></dt>
+<dd>the application id to be terminates</dd>
+</dl>
+<p>Keyword Args:
+<code>timeout</code> (int): [Android only] how much time to wait for the uninstall to complete.
+500ms by default.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd>True if the app has been successfully terminated</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def terminate_app(self, app_id: str, **options: Any) -&gt; bool:
+    &#34;&#34;&#34;Terminates the application if it is running.
+
+    Args:
+        app_id (str): the application id to be terminates
+
+    Keyword Args:
+        `timeout` (int): [Android only] how much time to wait for the uninstall to complete.
+            500ms by default.
+
+    Returns:
+        bool: True if the app has been successfully terminated
+    &#34;&#34;&#34;
+    data: Dict[str, Any] = {
+        &#39;appId&#39;: app_id,
+    }
+    if options:
+        data.update({&#39;options&#39;: options})
+    return self.execute(Command.TERMINATE_APP, data)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver.extensions" href="index.html">appium.webdriver.extensions</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.extensions.applications.Applications" href="#appium.webdriver.extensions.applications.Applications">Applications</a></code></h4>
+<ul class="two-column">
+<li><code><a title="appium.webdriver.extensions.applications.Applications.activate_app" href="#appium.webdriver.extensions.applications.Applications.activate_app">activate_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.app_strings" href="#appium.webdriver.extensions.applications.Applications.app_strings">app_strings</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.background_app" href="#appium.webdriver.extensions.applications.Applications.background_app">background_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.close_app" href="#appium.webdriver.extensions.applications.Applications.close_app">close_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.install_app" href="#appium.webdriver.extensions.applications.Applications.install_app">install_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.is_app_installed" href="#appium.webdriver.extensions.applications.Applications.is_app_installed">is_app_installed</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.launch_app" href="#appium.webdriver.extensions.applications.Applications.launch_app">launch_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.query_app_state" href="#appium.webdriver.extensions.applications.Applications.query_app_state">query_app_state</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.remove_app" href="#appium.webdriver.extensions.applications.Applications.remove_app">remove_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.reset" href="#appium.webdriver.extensions.applications.Applications.reset">reset</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.terminate_app" href="#appium.webdriver.extensions.applications.Applications.terminate_app">terminate_app</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

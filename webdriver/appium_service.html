@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.appium_service API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.appium_service</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os
+import subprocess as sp
+import sys
+import time
+from typing import Any, List, Optional, TypeVar, Union
+
+import urllib3
+
+DEFAULT_HOST = &#39;127.0.0.1&#39;
+DEFAULT_PORT = 4723
+STARTUP_TIMEOUT_MS = 60000
+MAIN_SCRIPT_PATH = &#39;appium/build/lib/main.js&#39;
+STATUS_URL = &#39;/wd/hub/status&#39;
+
+
+def find_executable(executable: str) -&gt; Optional[str]:
+    path = os.environ[&#39;PATH&#39;]
+    paths = path.split(os.pathsep)
+    base, ext = os.path.splitext(executable)
+    if sys.platform == &#39;win32&#39; and not ext:
+        executable = executable + &#39;.exe&#39;
+
+    if os.path.isfile(executable):
+        return executable
+
+    for p in paths:
+        full_path = os.path.join(p, executable)
+        if os.path.isfile(full_path):
+            return full_path
+
+    return None
+
+
+def poll_url(host: str, port: int, path: str, timeout_ms: int) -&gt; bool:
+    time_started_sec = time.time()
+    while time.time() &lt; time_started_sec + timeout_ms / 1000.0:
+        try:
+            conn = urllib3.PoolManager(timeout=1.0)
+            resp = conn.request(&#39;HEAD&#39;, f&#39;http://{host}:{port}{path}&#39;)
+            if resp.status &lt; 400:
+                return True
+        except Exception:
+            pass
+        time.sleep(1.0)
+    return False
+
+
+class AppiumServiceError(RuntimeError):
+    pass
+
+
+T = TypeVar(&#39;T&#39;, bound=&#39;AppiumService&#39;)
+
+
+class AppiumService:
+    def __init__(self) -&gt; None:
+        self._process: Optional[sp.Popen] = None
+        self._cmd: Optional[List] = None
+
+    def _get_node(self) -&gt; str:
+        if not hasattr(self, &#39;_node_executable&#39;):
+            self._node_executable = find_executable(&#39;node&#39;)
+        if self._node_executable is None:
+            raise AppiumServiceError(&#39;NodeJS main executable cannot be found. &#39; +
+                                     &#39;Make sure it is installed and present in PATH&#39;)
+        return self._node_executable
+
+    def _get_npm(self) -&gt; str:
+        if not hasattr(self, &#39;_npm_executable&#39;):
+            self._npm_executable = find_executable(&#39;npm.cmd&#39; if sys.platform == &#39;win32&#39; else &#39;npm&#39;)
+        if self._npm_executable is None:
+            raise AppiumServiceError(&#39;Node Package Manager executable cannot be found. &#39; +
+                                     &#39;Make sure it is installed and present in PATH&#39;)
+        return self._npm_executable
+
+    def _get_main_script(self) -&gt; Union[str, bytes]:
+        if not hasattr(self, &#39;_main_script&#39;):
+            for args in [[&#39;root&#39;, &#39;-g&#39;], [&#39;root&#39;]]:
+                try:
+                    modules_root = sp.check_output([self._get_npm()] + args).strip().decode(&#39;utf-8&#39;)
+                    if os.path.exists(os.path.join(modules_root, MAIN_SCRIPT_PATH)):
+                        self._main_script: Union[str, bytes] = os.path.join(modules_root, MAIN_SCRIPT_PATH)
+                        break
+                except sp.CalledProcessError:
+                    continue
+            if not hasattr(self, &#39;_main_script&#39;):
+                try:
+                    self._main_script = sp.check_output(
+                        [self._get_node(),
+                         &#39;-e&#39;,
+                         &#39;console.log(require.resolve(&#34;{}&#34;))&#39;.format(MAIN_SCRIPT_PATH)]).strip()
+                except sp.CalledProcessError as e:
+                    raise AppiumServiceError(e.output) from e
+        return self._main_script
+
+    @staticmethod
+    def _parse_port(args: List[str]) -&gt; int:
+        for idx, arg in enumerate(args or []):
+            if arg in (&#39;--port&#39;, &#39;-p&#39;) and idx &lt; len(args) - 1:
+                return int(args[idx + 1])
+        return DEFAULT_PORT
+
+    @staticmethod
+    def _parse_host(args: List[str]) -&gt; str:
+        for idx, arg in enumerate(args or []):
+            if arg in (&#39;--address&#39;, &#39;-a&#39;) and idx &lt; len(args) - 1:
+                return args[idx + 1]
+        return DEFAULT_HOST
+
+    def start(self, **kwargs: Any) -&gt; sp.Popen:
+        &#34;&#34;&#34;Starts Appium service with given arguments.
+
+        The service will be forcefully restarted if it is already running.
+
+        Keyword Args:
+            env (dict): Environment variables mapping. The default system environment,
+                which is inherited from the parent process is assigned by default.
+            node (str): The full path to the main NodeJS executable. The service will try
+                to retrieve it automatically by default.
+            stdout: Check on the documentation for subprocess.Popen for more details.
+                The default value is subprocess.PIPE.
+            stderr: Check on the documentation for subprocess.Popen for more details.
+                The default value is subprocess.PIPE.
+            timeout_ms (int): The maximum time to wait until Appium process starts listening
+                for HTTP connections. If set to zero or a negative number then no wait will be applied.
+                60000 ms by default
+            main_script (str): The full path to the main Appium executable
+                (usually located this is build/lib/main.js). If this is not set
+                then the service tries to detect the path automatically.
+            args (str): List of Appium arguments (all must be strings). Check on
+                https://appium.io/docs/en/writing-running-appium/server-args/ for more details
+                about possible arguments and their values.
+
+        Returns:
+            subprocess.Popen instance: You can use Popen.communicate interface
+                or stderr/stdout properties of the instance
+                (stdout/stderr must not be set to None in such case)
+                in order to retrieve the actual process output.
+        &#34;&#34;&#34;
+        self.stop()
+
+        env = kwargs[&#39;env&#39;] if &#39;env&#39; in kwargs else None
+        node = kwargs[&#39;node&#39;] if &#39;node&#39; in kwargs else self._get_node()
+        stdout = kwargs[&#39;stdout&#39;] if &#39;stdout&#39; in kwargs else sp.PIPE
+        stderr = kwargs[&#39;stderr&#39;] if &#39;stderr&#39; in kwargs else sp.PIPE
+        timeout_ms = int(kwargs[&#39;timeout_ms&#39;]) if &#39;timeout_ms&#39; in kwargs else STARTUP_TIMEOUT_MS
+        main_script = kwargs[&#39;main_script&#39;] if &#39;main_script&#39; in kwargs else self._get_main_script()
+        args = [node, main_script]
+        if &#39;args&#39; in kwargs:
+            args.extend(kwargs[&#39;args&#39;])
+        self._cmd = args
+        self._process = sp.Popen(args=args, stdout=stdout, stderr=stderr, env=env)
+        host = self._parse_host(args)
+        port = self._parse_port(args)
+        error_msg: Optional[str] = None
+        if not self.is_running or (timeout_ms &gt; 0 and not poll_url(host, port, STATUS_URL, timeout_ms)):
+            error_msg = f&#39;Appium has failed to start on {host}:{port} within {timeout_ms}ms timeout&#39;
+        if error_msg is not None:
+            if stderr == sp.PIPE:
+                err_output = self._process.stderr.read()
+                if err_output:
+                    error_msg += f&#39;\nOriginal error: {str(err_output)}&#39;
+            self.stop()
+            raise AppiumServiceError(error_msg)
+        return self._process
+
+    def stop(self) -&gt; bool:
+        &#34;&#34;&#34;Stops Appium service if it is running.
+
+        The call will be ignored if the service is not running
+        or has been already stopped.
+
+        Returns:
+            bool: `True` if the service was running before being stopped
+        &#34;&#34;&#34;
+        is_terminated = False
+        if self.is_running:
+            self._process.terminate()  # type: ignore
+            is_terminated = True
+        self._process = None
+        self._cmd = None
+        return is_terminated
+
+    @property
+    def is_running(self) -&gt; bool:
+        &#34;&#34;&#34;Check if the service is running.
+
+        Returns:
+            bool: `True` or `False`
+        &#34;&#34;&#34;
+        return self._process is not None and self._process.poll() is None
+
+    @property
+    def is_listening(self) -&gt; bool:
+        &#34;&#34;&#34;Check if the service is listening on the given/default host/port.
+
+        The fact, that the service is running, does not always mean it is listening.
+        the default host/port values can be customized by providing --address/--port
+        command line arguments while starting the service.
+
+        Returns:
+            bool: `True` if the service is running and listening on the given/default host/port
+        &#34;&#34;&#34;
+        if not self.is_running or self._cmd is None:
+            return False
+        host = self._parse_host(self._cmd)
+        port = self._parse_port(self._cmd)
+        return self.is_running and poll_url(host, port, STATUS_URL, 1000)
+
+
+if __name__ == &#39;__main__&#39;:
+    assert(find_executable(&#39;node&#39;) is not None)
+    assert(find_executable(&#39;npm&#39;) is not None)
+    service = AppiumService()
+    service.start(args=[&#39;--address&#39;, &#39;127.0.0.1&#39;, &#39;-p&#39;, str(DEFAULT_PORT)])
+    # service.start(args=[&#39;--address&#39;, &#39;127.0.0.1&#39;, &#39;-p&#39;, &#39;80&#39;], timeout_ms=2000)
+    assert(service.is_running)
+    assert(service.is_listening)
+    service.stop()
+    assert(not service.is_running)
+    assert(not service.is_listening)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="appium.webdriver.appium_service.find_executable"><code class="name flex">
+<span>def <span class="ident">find_executable</span></span>(<span>executable)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_executable(executable: str) -&gt; Optional[str]:
+    path = os.environ[&#39;PATH&#39;]
+    paths = path.split(os.pathsep)
+    base, ext = os.path.splitext(executable)
+    if sys.platform == &#39;win32&#39; and not ext:
+        executable = executable + &#39;.exe&#39;
+
+    if os.path.isfile(executable):
+        return executable
+
+    for p in paths:
+        full_path = os.path.join(p, executable)
+        if os.path.isfile(full_path):
+            return full_path
+
+    return None</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.appium_service.poll_url"><code class="name flex">
+<span>def <span class="ident">poll_url</span></span>(<span>host, port, path, timeout_ms)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def poll_url(host: str, port: int, path: str, timeout_ms: int) -&gt; bool:
+    time_started_sec = time.time()
+    while time.time() &lt; time_started_sec + timeout_ms / 1000.0:
+        try:
+            conn = urllib3.PoolManager(timeout=1.0)
+            resp = conn.request(&#39;HEAD&#39;, f&#39;http://{host}:{port}{path}&#39;)
+            if resp.status &lt; 400:
+                return True
+        except Exception:
+            pass
+        time.sleep(1.0)
+    return False</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.appium_service.AppiumService"><code class="flex name class">
+<span>class <span class="ident">AppiumService</span></span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AppiumService:
+    def __init__(self) -&gt; None:
+        self._process: Optional[sp.Popen] = None
+        self._cmd: Optional[List] = None
+
+    def _get_node(self) -&gt; str:
+        if not hasattr(self, &#39;_node_executable&#39;):
+            self._node_executable = find_executable(&#39;node&#39;)
+        if self._node_executable is None:
+            raise AppiumServiceError(&#39;NodeJS main executable cannot be found. &#39; +
+                                     &#39;Make sure it is installed and present in PATH&#39;)
+        return self._node_executable
+
+    def _get_npm(self) -&gt; str:
+        if not hasattr(self, &#39;_npm_executable&#39;):
+            self._npm_executable = find_executable(&#39;npm.cmd&#39; if sys.platform == &#39;win32&#39; else &#39;npm&#39;)
+        if self._npm_executable is None:
+            raise AppiumServiceError(&#39;Node Package Manager executable cannot be found. &#39; +
+                                     &#39;Make sure it is installed and present in PATH&#39;)
+        return self._npm_executable
+
+    def _get_main_script(self) -&gt; Union[str, bytes]:
+        if not hasattr(self, &#39;_main_script&#39;):
+            for args in [[&#39;root&#39;, &#39;-g&#39;], [&#39;root&#39;]]:
+                try:
+                    modules_root = sp.check_output([self._get_npm()] + args).strip().decode(&#39;utf-8&#39;)
+                    if os.path.exists(os.path.join(modules_root, MAIN_SCRIPT_PATH)):
+                        self._main_script: Union[str, bytes] = os.path.join(modules_root, MAIN_SCRIPT_PATH)
+                        break
+                except sp.CalledProcessError:
+                    continue
+            if not hasattr(self, &#39;_main_script&#39;):
+                try:
+                    self._main_script = sp.check_output(
+                        [self._get_node(),
+                         &#39;-e&#39;,
+                         &#39;console.log(require.resolve(&#34;{}&#34;))&#39;.format(MAIN_SCRIPT_PATH)]).strip()
+                except sp.CalledProcessError as e:
+                    raise AppiumServiceError(e.output) from e
+        return self._main_script
+
+    @staticmethod
+    def _parse_port(args: List[str]) -&gt; int:
+        for idx, arg in enumerate(args or []):
+            if arg in (&#39;--port&#39;, &#39;-p&#39;) and idx &lt; len(args) - 1:
+                return int(args[idx + 1])
+        return DEFAULT_PORT
+
+    @staticmethod
+    def _parse_host(args: List[str]) -&gt; str:
+        for idx, arg in enumerate(args or []):
+            if arg in (&#39;--address&#39;, &#39;-a&#39;) and idx &lt; len(args) - 1:
+                return args[idx + 1]
+        return DEFAULT_HOST
+
+    def start(self, **kwargs: Any) -&gt; sp.Popen:
+        &#34;&#34;&#34;Starts Appium service with given arguments.
+
+        The service will be forcefully restarted if it is already running.
+
+        Keyword Args:
+            env (dict): Environment variables mapping. The default system environment,
+                which is inherited from the parent process is assigned by default.
+            node (str): The full path to the main NodeJS executable. The service will try
+                to retrieve it automatically by default.
+            stdout: Check on the documentation for subprocess.Popen for more details.
+                The default value is subprocess.PIPE.
+            stderr: Check on the documentation for subprocess.Popen for more details.
+                The default value is subprocess.PIPE.
+            timeout_ms (int): The maximum time to wait until Appium process starts listening
+                for HTTP connections. If set to zero or a negative number then no wait will be applied.
+                60000 ms by default
+            main_script (str): The full path to the main Appium executable
+                (usually located this is build/lib/main.js). If this is not set
+                then the service tries to detect the path automatically.
+            args (str): List of Appium arguments (all must be strings). Check on
+                https://appium.io/docs/en/writing-running-appium/server-args/ for more details
+                about possible arguments and their values.
+
+        Returns:
+            subprocess.Popen instance: You can use Popen.communicate interface
+                or stderr/stdout properties of the instance
+                (stdout/stderr must not be set to None in such case)
+                in order to retrieve the actual process output.
+        &#34;&#34;&#34;
+        self.stop()
+
+        env = kwargs[&#39;env&#39;] if &#39;env&#39; in kwargs else None
+        node = kwargs[&#39;node&#39;] if &#39;node&#39; in kwargs else self._get_node()
+        stdout = kwargs[&#39;stdout&#39;] if &#39;stdout&#39; in kwargs else sp.PIPE
+        stderr = kwargs[&#39;stderr&#39;] if &#39;stderr&#39; in kwargs else sp.PIPE
+        timeout_ms = int(kwargs[&#39;timeout_ms&#39;]) if &#39;timeout_ms&#39; in kwargs else STARTUP_TIMEOUT_MS
+        main_script = kwargs[&#39;main_script&#39;] if &#39;main_script&#39; in kwargs else self._get_main_script()
+        args = [node, main_script]
+        if &#39;args&#39; in kwargs:
+            args.extend(kwargs[&#39;args&#39;])
+        self._cmd = args
+        self._process = sp.Popen(args=args, stdout=stdout, stderr=stderr, env=env)
+        host = self._parse_host(args)
+        port = self._parse_port(args)
+        error_msg: Optional[str] = None
+        if not self.is_running or (timeout_ms &gt; 0 and not poll_url(host, port, STATUS_URL, timeout_ms)):
+            error_msg = f&#39;Appium has failed to start on {host}:{port} within {timeout_ms}ms timeout&#39;
+        if error_msg is not None:
+            if stderr == sp.PIPE:
+                err_output = self._process.stderr.read()
+                if err_output:
+                    error_msg += f&#39;\nOriginal error: {str(err_output)}&#39;
+            self.stop()
+            raise AppiumServiceError(error_msg)
+        return self._process
+
+    def stop(self) -&gt; bool:
+        &#34;&#34;&#34;Stops Appium service if it is running.
+
+        The call will be ignored if the service is not running
+        or has been already stopped.
+
+        Returns:
+            bool: `True` if the service was running before being stopped
+        &#34;&#34;&#34;
+        is_terminated = False
+        if self.is_running:
+            self._process.terminate()  # type: ignore
+            is_terminated = True
+        self._process = None
+        self._cmd = None
+        return is_terminated
+
+    @property
+    def is_running(self) -&gt; bool:
+        &#34;&#34;&#34;Check if the service is running.
+
+        Returns:
+            bool: `True` or `False`
+        &#34;&#34;&#34;
+        return self._process is not None and self._process.poll() is None
+
+    @property
+    def is_listening(self) -&gt; bool:
+        &#34;&#34;&#34;Check if the service is listening on the given/default host/port.
+
+        The fact, that the service is running, does not always mean it is listening.
+        the default host/port values can be customized by providing --address/--port
+        command line arguments while starting the service.
+
+        Returns:
+            bool: `True` if the service is running and listening on the given/default host/port
+        &#34;&#34;&#34;
+        if not self.is_running or self._cmd is None:
+            return False
+        host = self._parse_host(self._cmd)
+        port = self._parse_port(self._cmd)
+        return self.is_running and poll_url(host, port, STATUS_URL, 1000)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="appium.webdriver.appium_service.AppiumService.is_listening"><code class="name">var <span class="ident">is_listening</span></code></dt>
+<dd>
+<section class="desc"><p>Check if the service is listening on the given/default host/port.</p>
+<p>The fact, that the service is running, does not always mean it is listening.
+the default host/port values can be customized by providing &ndash;address/&ndash;port
+command line arguments while starting the service.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd><code>True</code> if the service is running and listening on the given/default host/port</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_listening(self) -&gt; bool:
+    &#34;&#34;&#34;Check if the service is listening on the given/default host/port.
+
+    The fact, that the service is running, does not always mean it is listening.
+    the default host/port values can be customized by providing --address/--port
+    command line arguments while starting the service.
+
+    Returns:
+        bool: `True` if the service is running and listening on the given/default host/port
+    &#34;&#34;&#34;
+    if not self.is_running or self._cmd is None:
+        return False
+    host = self._parse_host(self._cmd)
+    port = self._parse_port(self._cmd)
+    return self.is_running and poll_url(host, port, STATUS_URL, 1000)</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.appium_service.AppiumService.is_running"><code class="name">var <span class="ident">is_running</span></code></dt>
+<dd>
+<section class="desc"><p>Check if the service is running.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd><code>True</code> or <code>False</code></dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_running(self) -&gt; bool:
+    &#34;&#34;&#34;Check if the service is running.
+
+    Returns:
+        bool: `True` or `False`
+    &#34;&#34;&#34;
+    return self._process is not None and self._process.poll() is None</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="appium.webdriver.appium_service.AppiumService.start"><code class="name flex">
+<span>def <span class="ident">start</span></span>(<span>self, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Starts Appium service with given arguments.</p>
+<p>The service will be forcefully restarted if it is already running.</p>
+<p>Keyword Args:
+env (dict): Environment variables mapping. The default system environment,
+which is inherited from the parent process is assigned by default.
+node (str): The full path to the main NodeJS executable. The service will try
+to retrieve it automatically by default.
+stdout: Check on the documentation for subprocess.Popen for more details.
+The default value is subprocess.PIPE.
+stderr: Check on the documentation for subprocess.Popen for more details.
+The default value is subprocess.PIPE.
+timeout_ms (int): The maximum time to wait until Appium process starts listening
+for HTTP connections. If set to zero or a negative number then no wait will be applied.
+60000 ms by default
+main_script (str): The full path to the main Appium executable
+(usually located this is build/lib/main.js). If this is not set
+then the service tries to detect the path automatically.
+args (str): List of Appium arguments (all must be strings). Check on
+<a href="https://appium.io/docs/en/writing-running-appium/server-args/">https://appium.io/docs/en/writing-running-appium/server-args/</a> for more details
+about possible arguments and their values.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>subprocess.Popen</code> <code>instance</code>: <code>You</code> <code>can</code> <code>use</code> <code>Popen.communicate</code> <code>interface</code></dt>
+<dd>or stderr/stdout properties of the instance
+(stdout/stderr must not be set to None in such case)
+in order to retrieve the actual process output.</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start(self, **kwargs: Any) -&gt; sp.Popen:
+    &#34;&#34;&#34;Starts Appium service with given arguments.
+
+    The service will be forcefully restarted if it is already running.
+
+    Keyword Args:
+        env (dict): Environment variables mapping. The default system environment,
+            which is inherited from the parent process is assigned by default.
+        node (str): The full path to the main NodeJS executable. The service will try
+            to retrieve it automatically by default.
+        stdout: Check on the documentation for subprocess.Popen for more details.
+            The default value is subprocess.PIPE.
+        stderr: Check on the documentation for subprocess.Popen for more details.
+            The default value is subprocess.PIPE.
+        timeout_ms (int): The maximum time to wait until Appium process starts listening
+            for HTTP connections. If set to zero or a negative number then no wait will be applied.
+            60000 ms by default
+        main_script (str): The full path to the main Appium executable
+            (usually located this is build/lib/main.js). If this is not set
+            then the service tries to detect the path automatically.
+        args (str): List of Appium arguments (all must be strings). Check on
+            https://appium.io/docs/en/writing-running-appium/server-args/ for more details
+            about possible arguments and their values.
+
+    Returns:
+        subprocess.Popen instance: You can use Popen.communicate interface
+            or stderr/stdout properties of the instance
+            (stdout/stderr must not be set to None in such case)
+            in order to retrieve the actual process output.
+    &#34;&#34;&#34;
+    self.stop()
+
+    env = kwargs[&#39;env&#39;] if &#39;env&#39; in kwargs else None
+    node = kwargs[&#39;node&#39;] if &#39;node&#39; in kwargs else self._get_node()
+    stdout = kwargs[&#39;stdout&#39;] if &#39;stdout&#39; in kwargs else sp.PIPE
+    stderr = kwargs[&#39;stderr&#39;] if &#39;stderr&#39; in kwargs else sp.PIPE
+    timeout_ms = int(kwargs[&#39;timeout_ms&#39;]) if &#39;timeout_ms&#39; in kwargs else STARTUP_TIMEOUT_MS
+    main_script = kwargs[&#39;main_script&#39;] if &#39;main_script&#39; in kwargs else self._get_main_script()
+    args = [node, main_script]
+    if &#39;args&#39; in kwargs:
+        args.extend(kwargs[&#39;args&#39;])
+    self._cmd = args
+    self._process = sp.Popen(args=args, stdout=stdout, stderr=stderr, env=env)
+    host = self._parse_host(args)
+    port = self._parse_port(args)
+    error_msg: Optional[str] = None
+    if not self.is_running or (timeout_ms &gt; 0 and not poll_url(host, port, STATUS_URL, timeout_ms)):
+        error_msg = f&#39;Appium has failed to start on {host}:{port} within {timeout_ms}ms timeout&#39;
+    if error_msg is not None:
+        if stderr == sp.PIPE:
+            err_output = self._process.stderr.read()
+            if err_output:
+                error_msg += f&#39;\nOriginal error: {str(err_output)}&#39;
+        self.stop()
+        raise AppiumServiceError(error_msg)
+    return self._process</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.appium_service.AppiumService.stop"><code class="name flex">
+<span>def <span class="ident">stop</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Stops Appium service if it is running.</p>
+<p>The call will be ignored if the service is not running
+or has been already stopped.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>bool</code></strong></dt>
+<dd><code>True</code> if the service was running before being stopped</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stop(self) -&gt; bool:
+    &#34;&#34;&#34;Stops Appium service if it is running.
+
+    The call will be ignored if the service is not running
+    or has been already stopped.
+
+    Returns:
+        bool: `True` if the service was running before being stopped
+    &#34;&#34;&#34;
+    is_terminated = False
+    if self.is_running:
+        self._process.terminate()  # type: ignore
+        is_terminated = True
+    self._process = None
+    self._cmd = None
+    return is_terminated</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="appium.webdriver.appium_service.AppiumServiceError"><code class="flex name class">
+<span>class <span class="ident">AppiumServiceError</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Unspecified run-time error.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class AppiumServiceError(RuntimeError):
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.RuntimeError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver" href="index.html">appium.webdriver</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="appium.webdriver.appium_service.find_executable" href="#appium.webdriver.appium_service.find_executable">find_executable</a></code></li>
+<li><code><a title="appium.webdriver.appium_service.poll_url" href="#appium.webdriver.appium_service.poll_url">poll_url</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.appium_service.AppiumService" href="#appium.webdriver.appium_service.AppiumService">AppiumService</a></code></h4>
+<ul class="">
+<li><code><a title="appium.webdriver.appium_service.AppiumService.is_listening" href="#appium.webdriver.appium_service.AppiumService.is_listening">is_listening</a></code></li>
+<li><code><a title="appium.webdriver.appium_service.AppiumService.is_running" href="#appium.webdriver.appium_service.AppiumService.is_running">is_running</a></code></li>
+<li><code><a title="appium.webdriver.appium_service.AppiumService.start" href="#appium.webdriver.appium_service.AppiumService.start">start</a></code></li>
+<li><code><a title="appium.webdriver.appium_service.AppiumService.stop" href="#appium.webdriver.appium_service.AppiumService.stop">stop</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="appium.webdriver.appium_service.AppiumServiceError" href="#appium.webdriver.appium_service.AppiumServiceError">AppiumServiceError</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

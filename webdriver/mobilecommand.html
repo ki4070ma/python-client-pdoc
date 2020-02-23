@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.mobilecommand API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.mobilecommand</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
+class MobileCommand:
+    # Common
+    GET_SESSION = &#39;getSession&#39;
+    GET_ALL_SESSIONS = &#39;getAllSessions&#39;
+
+    GET_LOCATION = &#39;getLocation&#39;
+    SET_LOCATION = &#39;setLocation&#39;
+
+    GET_AVAILABLE_IME_ENGINES = &#39;getAvailableIMEEngines&#39;
+    IS_IME_ACTIVE = &#39;isIMEActive&#39;
+    ACTIVATE_IME_ENGINE = &#39;activateIMEEngine&#39;
+    DEACTIVATE_IME_ENGINE = &#39;deactivateIMEEngine&#39;
+    GET_ACTIVE_IME_ENGINE = &#39;getActiveEngine&#39;
+
+    CLEAR = &#39;clear&#39;
+    LOCATION_IN_VIEW = &#39;locationInView&#39;
+
+    CONTEXTS = &#39;getContexts&#39;
+    GET_CURRENT_CONTEXT = &#39;getCurrentContext&#39;
+    SWITCH_TO_CONTEXT = &#39;switchToContext&#39;
+
+    TOUCH_ACTION = &#39;touchAction&#39;
+    MULTI_ACTION = &#39;multiAction&#39;
+
+    SET_IMMEDIATE_VALUE = &#39;setImmediateValue&#39;
+    REPLACE_KEYS = &#39;replaceKeys&#39;
+
+    LAUNCH_APP = &#39;launchApp&#39;
+    CLOSE_APP = &#39;closeApp&#39;
+    RESET = &#39;reset&#39;
+    BACKGROUND = &#39;background&#39;
+    GET_APP_STRINGS = &#39;getAppStrings&#39;
+
+    IS_LOCKED = &#39;isLocked&#39;
+    LOCK = &#39;lock&#39;
+    UNLOCK = &#39;unlock&#39;
+    GET_DEVICE_TIME_GET = &#39;getDeviceTimeGet&#39;
+    GET_DEVICE_TIME_POST = &#39;getDeviceTimePost&#39;
+    INSTALL_APP = &#39;installApp&#39;
+    REMOVE_APP = &#39;removeApp&#39;
+    IS_APP_INSTALLED = &#39;isAppInstalled&#39;
+    TERMINATE_APP = &#39;terminateApp&#39;
+    ACTIVATE_APP = &#39;activateApp&#39;
+    QUERY_APP_STATE = &#39;queryAppState&#39;
+    SHAKE = &#39;shake&#39;
+    HIDE_KEYBOARD = &#39;hideKeyboard&#39;
+    PRESS_KEYCODE = &#39;pressKeyCode&#39;
+    LONG_PRESS_KEYCODE = &#39;longPressKeyCode&#39;
+    KEY_EVENT = &#39;keyEvent&#39;  # Needed for Selendroid
+    PUSH_FILE = &#39;pushFile&#39;
+    PULL_FILE = &#39;pullFile&#39;
+    PULL_FOLDER = &#39;pullFolder&#39;
+    GET_CLIPBOARD = &#39;getClipboard&#39;
+    SET_CLIPBOARD = &#39;setClipboard&#39;
+    FINGER_PRINT = &#39;fingerPrint&#39;
+    GET_SETTINGS = &#39;getSettings&#39;
+    UPDATE_SETTINGS = &#39;updateSettings&#39;
+    START_RECORDING_SCREEN = &#39;startRecordingScreen&#39;
+    STOP_RECORDING_SCREEN = &#39;stopRecordingScreen&#39;
+    COMPARE_IMAGES = &#39;compareImages&#39;
+    IS_KEYBOARD_SHOWN = &#39;isKeyboardShown&#39;
+
+    EXECUTE_DRIVER = &#39;executeDriver&#39;
+
+    GET_EVENTS = &#39;getLogEvents&#39;
+    LOG_EVENT = &#39;logCustomEvent&#39;
+
+    # Android
+    OPEN_NOTIFICATIONS = &#39;openNotifications&#39;
+    START_ACTIVITY = &#39;startActivity&#39;
+    GET_CURRENT_ACTIVITY = &#39;getCurrentActivity&#39;
+    GET_CURRENT_PACKAGE = &#39;getCurrentPackage&#39;
+    GET_SYSTEM_BARS = &#39;getSystemBars&#39;
+    GET_DISPLAY_DENSITY = &#39;getDisplayDensity&#39;
+    TOGGLE_WIFI = &#39;toggleWiFi&#39;
+    TOGGLE_LOCATION_SERVICES = &#39;toggleLocationServices&#39;
+    END_TEST_COVERAGE = &#39;endTestCoverage&#39;
+    GET_PERFORMANCE_DATA_TYPES = &#39;getPerformanceDataTypes&#39;
+    GET_PERFORMANCE_DATA = &#39;getPerformanceData&#39;
+    GET_NETWORK_CONNECTION = &#39;getNetworkConnection&#39;
+    SET_NETWORK_CONNECTION = &#39;setNetworkConnection&#39;
+
+    # Android Emulator
+    SEND_SMS = &#39;sendSms&#39;
+    MAKE_GSM_CALL = &#39;makeGsmCall&#39;
+    SET_GSM_SIGNAL = &#39;setGsmSignal&#39;
+    SET_GSM_VOICE = &#39;setGsmVoice&#39;
+    SET_NETWORK_SPEED = &#39;setNetworkSpeed&#39;
+    SET_POWER_CAPACITY = &#39;setPowerCapacity&#39;
+    SET_POWER_AC = &#39;setPowerAc&#39;
+
+    # iOS
+    TOUCH_ID = &#39;touchId&#39;
+    TOGGLE_TOUCH_ID_ENROLLMENT = &#39;toggleTouchIdEnrollment&#39;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.mobilecommand.MobileCommand"><code class="flex name class">
+<span>class <span class="ident">MobileCommand</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class MobileCommand:
+    # Common
+    GET_SESSION = &#39;getSession&#39;
+    GET_ALL_SESSIONS = &#39;getAllSessions&#39;
+
+    GET_LOCATION = &#39;getLocation&#39;
+    SET_LOCATION = &#39;setLocation&#39;
+
+    GET_AVAILABLE_IME_ENGINES = &#39;getAvailableIMEEngines&#39;
+    IS_IME_ACTIVE = &#39;isIMEActive&#39;
+    ACTIVATE_IME_ENGINE = &#39;activateIMEEngine&#39;
+    DEACTIVATE_IME_ENGINE = &#39;deactivateIMEEngine&#39;
+    GET_ACTIVE_IME_ENGINE = &#39;getActiveEngine&#39;
+
+    CLEAR = &#39;clear&#39;
+    LOCATION_IN_VIEW = &#39;locationInView&#39;
+
+    CONTEXTS = &#39;getContexts&#39;
+    GET_CURRENT_CONTEXT = &#39;getCurrentContext&#39;
+    SWITCH_TO_CONTEXT = &#39;switchToContext&#39;
+
+    TOUCH_ACTION = &#39;touchAction&#39;
+    MULTI_ACTION = &#39;multiAction&#39;
+
+    SET_IMMEDIATE_VALUE = &#39;setImmediateValue&#39;
+    REPLACE_KEYS = &#39;replaceKeys&#39;
+
+    LAUNCH_APP = &#39;launchApp&#39;
+    CLOSE_APP = &#39;closeApp&#39;
+    RESET = &#39;reset&#39;
+    BACKGROUND = &#39;background&#39;
+    GET_APP_STRINGS = &#39;getAppStrings&#39;
+
+    IS_LOCKED = &#39;isLocked&#39;
+    LOCK = &#39;lock&#39;
+    UNLOCK = &#39;unlock&#39;
+    GET_DEVICE_TIME_GET = &#39;getDeviceTimeGet&#39;
+    GET_DEVICE_TIME_POST = &#39;getDeviceTimePost&#39;
+    INSTALL_APP = &#39;installApp&#39;
+    REMOVE_APP = &#39;removeApp&#39;
+    IS_APP_INSTALLED = &#39;isAppInstalled&#39;
+    TERMINATE_APP = &#39;terminateApp&#39;
+    ACTIVATE_APP = &#39;activateApp&#39;
+    QUERY_APP_STATE = &#39;queryAppState&#39;
+    SHAKE = &#39;shake&#39;
+    HIDE_KEYBOARD = &#39;hideKeyboard&#39;
+    PRESS_KEYCODE = &#39;pressKeyCode&#39;
+    LONG_PRESS_KEYCODE = &#39;longPressKeyCode&#39;
+    KEY_EVENT = &#39;keyEvent&#39;  # Needed for Selendroid
+    PUSH_FILE = &#39;pushFile&#39;
+    PULL_FILE = &#39;pullFile&#39;
+    PULL_FOLDER = &#39;pullFolder&#39;
+    GET_CLIPBOARD = &#39;getClipboard&#39;
+    SET_CLIPBOARD = &#39;setClipboard&#39;
+    FINGER_PRINT = &#39;fingerPrint&#39;
+    GET_SETTINGS = &#39;getSettings&#39;
+    UPDATE_SETTINGS = &#39;updateSettings&#39;
+    START_RECORDING_SCREEN = &#39;startRecordingScreen&#39;
+    STOP_RECORDING_SCREEN = &#39;stopRecordingScreen&#39;
+    COMPARE_IMAGES = &#39;compareImages&#39;
+    IS_KEYBOARD_SHOWN = &#39;isKeyboardShown&#39;
+
+    EXECUTE_DRIVER = &#39;executeDriver&#39;
+
+    GET_EVENTS = &#39;getLogEvents&#39;
+    LOG_EVENT = &#39;logCustomEvent&#39;
+
+    # Android
+    OPEN_NOTIFICATIONS = &#39;openNotifications&#39;
+    START_ACTIVITY = &#39;startActivity&#39;
+    GET_CURRENT_ACTIVITY = &#39;getCurrentActivity&#39;
+    GET_CURRENT_PACKAGE = &#39;getCurrentPackage&#39;
+    GET_SYSTEM_BARS = &#39;getSystemBars&#39;
+    GET_DISPLAY_DENSITY = &#39;getDisplayDensity&#39;
+    TOGGLE_WIFI = &#39;toggleWiFi&#39;
+    TOGGLE_LOCATION_SERVICES = &#39;toggleLocationServices&#39;
+    END_TEST_COVERAGE = &#39;endTestCoverage&#39;
+    GET_PERFORMANCE_DATA_TYPES = &#39;getPerformanceDataTypes&#39;
+    GET_PERFORMANCE_DATA = &#39;getPerformanceData&#39;
+    GET_NETWORK_CONNECTION = &#39;getNetworkConnection&#39;
+    SET_NETWORK_CONNECTION = &#39;setNetworkConnection&#39;
+
+    # Android Emulator
+    SEND_SMS = &#39;sendSms&#39;
+    MAKE_GSM_CALL = &#39;makeGsmCall&#39;
+    SET_GSM_SIGNAL = &#39;setGsmSignal&#39;
+    SET_GSM_VOICE = &#39;setGsmVoice&#39;
+    SET_NETWORK_SPEED = &#39;setNetworkSpeed&#39;
+    SET_POWER_CAPACITY = &#39;setPowerCapacity&#39;
+    SET_POWER_AC = &#39;setPowerAc&#39;
+
+    # iOS
+    TOUCH_ID = &#39;touchId&#39;
+    TOGGLE_TOUCH_ID_ENROLLMENT = &#39;toggleTouchIdEnrollment&#39;</code></pre>
+</details>
+<h3>Class variables</h3>
+<dl>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_APP"><code class="name">var <span class="ident">ACTIVATE_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_IME_ENGINE"><code class="name">var <span class="ident">ACTIVATE_IME_ENGINE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.BACKGROUND"><code class="name">var <span class="ident">BACKGROUND</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.CLEAR"><code class="name">var <span class="ident">CLEAR</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.CLOSE_APP"><code class="name">var <span class="ident">CLOSE_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.COMPARE_IMAGES"><code class="name">var <span class="ident">COMPARE_IMAGES</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.CONTEXTS"><code class="name">var <span class="ident">CONTEXTS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.DEACTIVATE_IME_ENGINE"><code class="name">var <span class="ident">DEACTIVATE_IME_ENGINE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.END_TEST_COVERAGE"><code class="name">var <span class="ident">END_TEST_COVERAGE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.EXECUTE_DRIVER"><code class="name">var <span class="ident">EXECUTE_DRIVER</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.FINGER_PRINT"><code class="name">var <span class="ident">FINGER_PRINT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_ACTIVE_IME_ENGINE"><code class="name">var <span class="ident">GET_ACTIVE_IME_ENGINE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_ALL_SESSIONS"><code class="name">var <span class="ident">GET_ALL_SESSIONS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_APP_STRINGS"><code class="name">var <span class="ident">GET_APP_STRINGS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_AVAILABLE_IME_ENGINES"><code class="name">var <span class="ident">GET_AVAILABLE_IME_ENGINES</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_CLIPBOARD"><code class="name">var <span class="ident">GET_CLIPBOARD</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_ACTIVITY"><code class="name">var <span class="ident">GET_CURRENT_ACTIVITY</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_CONTEXT"><code class="name">var <span class="ident">GET_CURRENT_CONTEXT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_PACKAGE"><code class="name">var <span class="ident">GET_CURRENT_PACKAGE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_GET"><code class="name">var <span class="ident">GET_DEVICE_TIME_GET</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_POST"><code class="name">var <span class="ident">GET_DEVICE_TIME_POST</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_DISPLAY_DENSITY"><code class="name">var <span class="ident">GET_DISPLAY_DENSITY</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_EVENTS"><code class="name">var <span class="ident">GET_EVENTS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_LOCATION"><code class="name">var <span class="ident">GET_LOCATION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_NETWORK_CONNECTION"><code class="name">var <span class="ident">GET_NETWORK_CONNECTION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA"><code class="name">var <span class="ident">GET_PERFORMANCE_DATA</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA_TYPES"><code class="name">var <span class="ident">GET_PERFORMANCE_DATA_TYPES</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_SESSION"><code class="name">var <span class="ident">GET_SESSION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_SETTINGS"><code class="name">var <span class="ident">GET_SETTINGS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.GET_SYSTEM_BARS"><code class="name">var <span class="ident">GET_SYSTEM_BARS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.HIDE_KEYBOARD"><code class="name">var <span class="ident">HIDE_KEYBOARD</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.INSTALL_APP"><code class="name">var <span class="ident">INSTALL_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.IS_APP_INSTALLED"><code class="name">var <span class="ident">IS_APP_INSTALLED</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.IS_IME_ACTIVE"><code class="name">var <span class="ident">IS_IME_ACTIVE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.IS_KEYBOARD_SHOWN"><code class="name">var <span class="ident">IS_KEYBOARD_SHOWN</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.IS_LOCKED"><code class="name">var <span class="ident">IS_LOCKED</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.KEY_EVENT"><code class="name">var <span class="ident">KEY_EVENT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.LAUNCH_APP"><code class="name">var <span class="ident">LAUNCH_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.LOCATION_IN_VIEW"><code class="name">var <span class="ident">LOCATION_IN_VIEW</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.LOCK"><code class="name">var <span class="ident">LOCK</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.LOG_EVENT"><code class="name">var <span class="ident">LOG_EVENT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.LONG_PRESS_KEYCODE"><code class="name">var <span class="ident">LONG_PRESS_KEYCODE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.MAKE_GSM_CALL"><code class="name">var <span class="ident">MAKE_GSM_CALL</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.MULTI_ACTION"><code class="name">var <span class="ident">MULTI_ACTION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.OPEN_NOTIFICATIONS"><code class="name">var <span class="ident">OPEN_NOTIFICATIONS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.PRESS_KEYCODE"><code class="name">var <span class="ident">PRESS_KEYCODE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.PULL_FILE"><code class="name">var <span class="ident">PULL_FILE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.PULL_FOLDER"><code class="name">var <span class="ident">PULL_FOLDER</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.PUSH_FILE"><code class="name">var <span class="ident">PUSH_FILE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.QUERY_APP_STATE"><code class="name">var <span class="ident">QUERY_APP_STATE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.REMOVE_APP"><code class="name">var <span class="ident">REMOVE_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.REPLACE_KEYS"><code class="name">var <span class="ident">REPLACE_KEYS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.RESET"><code class="name">var <span class="ident">RESET</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SEND_SMS"><code class="name">var <span class="ident">SEND_SMS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_CLIPBOARD"><code class="name">var <span class="ident">SET_CLIPBOARD</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_GSM_SIGNAL"><code class="name">var <span class="ident">SET_GSM_SIGNAL</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_GSM_VOICE"><code class="name">var <span class="ident">SET_GSM_VOICE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_IMMEDIATE_VALUE"><code class="name">var <span class="ident">SET_IMMEDIATE_VALUE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_LOCATION"><code class="name">var <span class="ident">SET_LOCATION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_CONNECTION"><code class="name">var <span class="ident">SET_NETWORK_CONNECTION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_SPEED"><code class="name">var <span class="ident">SET_NETWORK_SPEED</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_POWER_AC"><code class="name">var <span class="ident">SET_POWER_AC</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SET_POWER_CAPACITY"><code class="name">var <span class="ident">SET_POWER_CAPACITY</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SHAKE"><code class="name">var <span class="ident">SHAKE</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.START_ACTIVITY"><code class="name">var <span class="ident">START_ACTIVITY</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.START_RECORDING_SCREEN"><code class="name">var <span class="ident">START_RECORDING_SCREEN</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.STOP_RECORDING_SCREEN"><code class="name">var <span class="ident">STOP_RECORDING_SCREEN</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.SWITCH_TO_CONTEXT"><code class="name">var <span class="ident">SWITCH_TO_CONTEXT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TERMINATE_APP"><code class="name">var <span class="ident">TERMINATE_APP</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_LOCATION_SERVICES"><code class="name">var <span class="ident">TOGGLE_LOCATION_SERVICES</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_TOUCH_ID_ENROLLMENT"><code class="name">var <span class="ident">TOGGLE_TOUCH_ID_ENROLLMENT</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_WIFI"><code class="name">var <span class="ident">TOGGLE_WIFI</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TOUCH_ACTION"><code class="name">var <span class="ident">TOUCH_ACTION</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.TOUCH_ID"><code class="name">var <span class="ident">TOUCH_ID</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.UNLOCK"><code class="name">var <span class="ident">UNLOCK</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+<dt id="appium.webdriver.mobilecommand.MobileCommand.UPDATE_SETTINGS"><code class="name">var <span class="ident">UPDATE_SETTINGS</span></code></dt>
+<dd>
+<section class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></section>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver" href="index.html">appium.webdriver</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.mobilecommand.MobileCommand" href="#appium.webdriver.mobilecommand.MobileCommand">MobileCommand</a></code></h4>
+<ul class="">
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_APP" href="#appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_APP">ACTIVATE_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_IME_ENGINE" href="#appium.webdriver.mobilecommand.MobileCommand.ACTIVATE_IME_ENGINE">ACTIVATE_IME_ENGINE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.BACKGROUND" href="#appium.webdriver.mobilecommand.MobileCommand.BACKGROUND">BACKGROUND</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.CLEAR" href="#appium.webdriver.mobilecommand.MobileCommand.CLEAR">CLEAR</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.CLOSE_APP" href="#appium.webdriver.mobilecommand.MobileCommand.CLOSE_APP">CLOSE_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.COMPARE_IMAGES" href="#appium.webdriver.mobilecommand.MobileCommand.COMPARE_IMAGES">COMPARE_IMAGES</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.CONTEXTS" href="#appium.webdriver.mobilecommand.MobileCommand.CONTEXTS">CONTEXTS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.DEACTIVATE_IME_ENGINE" href="#appium.webdriver.mobilecommand.MobileCommand.DEACTIVATE_IME_ENGINE">DEACTIVATE_IME_ENGINE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.END_TEST_COVERAGE" href="#appium.webdriver.mobilecommand.MobileCommand.END_TEST_COVERAGE">END_TEST_COVERAGE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.EXECUTE_DRIVER" href="#appium.webdriver.mobilecommand.MobileCommand.EXECUTE_DRIVER">EXECUTE_DRIVER</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.FINGER_PRINT" href="#appium.webdriver.mobilecommand.MobileCommand.FINGER_PRINT">FINGER_PRINT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_ACTIVE_IME_ENGINE" href="#appium.webdriver.mobilecommand.MobileCommand.GET_ACTIVE_IME_ENGINE">GET_ACTIVE_IME_ENGINE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_ALL_SESSIONS" href="#appium.webdriver.mobilecommand.MobileCommand.GET_ALL_SESSIONS">GET_ALL_SESSIONS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_APP_STRINGS" href="#appium.webdriver.mobilecommand.MobileCommand.GET_APP_STRINGS">GET_APP_STRINGS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_AVAILABLE_IME_ENGINES" href="#appium.webdriver.mobilecommand.MobileCommand.GET_AVAILABLE_IME_ENGINES">GET_AVAILABLE_IME_ENGINES</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_CLIPBOARD" href="#appium.webdriver.mobilecommand.MobileCommand.GET_CLIPBOARD">GET_CLIPBOARD</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_ACTIVITY" href="#appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_ACTIVITY">GET_CURRENT_ACTIVITY</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_CONTEXT" href="#appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_CONTEXT">GET_CURRENT_CONTEXT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_PACKAGE" href="#appium.webdriver.mobilecommand.MobileCommand.GET_CURRENT_PACKAGE">GET_CURRENT_PACKAGE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_GET" href="#appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_GET">GET_DEVICE_TIME_GET</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_POST" href="#appium.webdriver.mobilecommand.MobileCommand.GET_DEVICE_TIME_POST">GET_DEVICE_TIME_POST</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_DISPLAY_DENSITY" href="#appium.webdriver.mobilecommand.MobileCommand.GET_DISPLAY_DENSITY">GET_DISPLAY_DENSITY</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_EVENTS" href="#appium.webdriver.mobilecommand.MobileCommand.GET_EVENTS">GET_EVENTS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_LOCATION" href="#appium.webdriver.mobilecommand.MobileCommand.GET_LOCATION">GET_LOCATION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_NETWORK_CONNECTION" href="#appium.webdriver.mobilecommand.MobileCommand.GET_NETWORK_CONNECTION">GET_NETWORK_CONNECTION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA" href="#appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA">GET_PERFORMANCE_DATA</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA_TYPES" href="#appium.webdriver.mobilecommand.MobileCommand.GET_PERFORMANCE_DATA_TYPES">GET_PERFORMANCE_DATA_TYPES</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_SESSION" href="#appium.webdriver.mobilecommand.MobileCommand.GET_SESSION">GET_SESSION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_SETTINGS" href="#appium.webdriver.mobilecommand.MobileCommand.GET_SETTINGS">GET_SETTINGS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.GET_SYSTEM_BARS" href="#appium.webdriver.mobilecommand.MobileCommand.GET_SYSTEM_BARS">GET_SYSTEM_BARS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.HIDE_KEYBOARD" href="#appium.webdriver.mobilecommand.MobileCommand.HIDE_KEYBOARD">HIDE_KEYBOARD</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.INSTALL_APP" href="#appium.webdriver.mobilecommand.MobileCommand.INSTALL_APP">INSTALL_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.IS_APP_INSTALLED" href="#appium.webdriver.mobilecommand.MobileCommand.IS_APP_INSTALLED">IS_APP_INSTALLED</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.IS_IME_ACTIVE" href="#appium.webdriver.mobilecommand.MobileCommand.IS_IME_ACTIVE">IS_IME_ACTIVE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.IS_KEYBOARD_SHOWN" href="#appium.webdriver.mobilecommand.MobileCommand.IS_KEYBOARD_SHOWN">IS_KEYBOARD_SHOWN</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.IS_LOCKED" href="#appium.webdriver.mobilecommand.MobileCommand.IS_LOCKED">IS_LOCKED</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.KEY_EVENT" href="#appium.webdriver.mobilecommand.MobileCommand.KEY_EVENT">KEY_EVENT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.LAUNCH_APP" href="#appium.webdriver.mobilecommand.MobileCommand.LAUNCH_APP">LAUNCH_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.LOCATION_IN_VIEW" href="#appium.webdriver.mobilecommand.MobileCommand.LOCATION_IN_VIEW">LOCATION_IN_VIEW</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.LOCK" href="#appium.webdriver.mobilecommand.MobileCommand.LOCK">LOCK</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.LOG_EVENT" href="#appium.webdriver.mobilecommand.MobileCommand.LOG_EVENT">LOG_EVENT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.LONG_PRESS_KEYCODE" href="#appium.webdriver.mobilecommand.MobileCommand.LONG_PRESS_KEYCODE">LONG_PRESS_KEYCODE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.MAKE_GSM_CALL" href="#appium.webdriver.mobilecommand.MobileCommand.MAKE_GSM_CALL">MAKE_GSM_CALL</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.MULTI_ACTION" href="#appium.webdriver.mobilecommand.MobileCommand.MULTI_ACTION">MULTI_ACTION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.OPEN_NOTIFICATIONS" href="#appium.webdriver.mobilecommand.MobileCommand.OPEN_NOTIFICATIONS">OPEN_NOTIFICATIONS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.PRESS_KEYCODE" href="#appium.webdriver.mobilecommand.MobileCommand.PRESS_KEYCODE">PRESS_KEYCODE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.PULL_FILE" href="#appium.webdriver.mobilecommand.MobileCommand.PULL_FILE">PULL_FILE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.PULL_FOLDER" href="#appium.webdriver.mobilecommand.MobileCommand.PULL_FOLDER">PULL_FOLDER</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.PUSH_FILE" href="#appium.webdriver.mobilecommand.MobileCommand.PUSH_FILE">PUSH_FILE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.QUERY_APP_STATE" href="#appium.webdriver.mobilecommand.MobileCommand.QUERY_APP_STATE">QUERY_APP_STATE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.REMOVE_APP" href="#appium.webdriver.mobilecommand.MobileCommand.REMOVE_APP">REMOVE_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.REPLACE_KEYS" href="#appium.webdriver.mobilecommand.MobileCommand.REPLACE_KEYS">REPLACE_KEYS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.RESET" href="#appium.webdriver.mobilecommand.MobileCommand.RESET">RESET</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SEND_SMS" href="#appium.webdriver.mobilecommand.MobileCommand.SEND_SMS">SEND_SMS</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_CLIPBOARD" href="#appium.webdriver.mobilecommand.MobileCommand.SET_CLIPBOARD">SET_CLIPBOARD</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_GSM_SIGNAL" href="#appium.webdriver.mobilecommand.MobileCommand.SET_GSM_SIGNAL">SET_GSM_SIGNAL</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_GSM_VOICE" href="#appium.webdriver.mobilecommand.MobileCommand.SET_GSM_VOICE">SET_GSM_VOICE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_IMMEDIATE_VALUE" href="#appium.webdriver.mobilecommand.MobileCommand.SET_IMMEDIATE_VALUE">SET_IMMEDIATE_VALUE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_LOCATION" href="#appium.webdriver.mobilecommand.MobileCommand.SET_LOCATION">SET_LOCATION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_CONNECTION" href="#appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_CONNECTION">SET_NETWORK_CONNECTION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_SPEED" href="#appium.webdriver.mobilecommand.MobileCommand.SET_NETWORK_SPEED">SET_NETWORK_SPEED</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_POWER_AC" href="#appium.webdriver.mobilecommand.MobileCommand.SET_POWER_AC">SET_POWER_AC</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SET_POWER_CAPACITY" href="#appium.webdriver.mobilecommand.MobileCommand.SET_POWER_CAPACITY">SET_POWER_CAPACITY</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SHAKE" href="#appium.webdriver.mobilecommand.MobileCommand.SHAKE">SHAKE</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.START_ACTIVITY" href="#appium.webdriver.mobilecommand.MobileCommand.START_ACTIVITY">START_ACTIVITY</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.START_RECORDING_SCREEN" href="#appium.webdriver.mobilecommand.MobileCommand.START_RECORDING_SCREEN">START_RECORDING_SCREEN</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.STOP_RECORDING_SCREEN" href="#appium.webdriver.mobilecommand.MobileCommand.STOP_RECORDING_SCREEN">STOP_RECORDING_SCREEN</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.SWITCH_TO_CONTEXT" href="#appium.webdriver.mobilecommand.MobileCommand.SWITCH_TO_CONTEXT">SWITCH_TO_CONTEXT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TERMINATE_APP" href="#appium.webdriver.mobilecommand.MobileCommand.TERMINATE_APP">TERMINATE_APP</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_LOCATION_SERVICES" href="#appium.webdriver.mobilecommand.MobileCommand.TOGGLE_LOCATION_SERVICES">TOGGLE_LOCATION_SERVICES</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_TOUCH_ID_ENROLLMENT" href="#appium.webdriver.mobilecommand.MobileCommand.TOGGLE_TOUCH_ID_ENROLLMENT">TOGGLE_TOUCH_ID_ENROLLMENT</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TOGGLE_WIFI" href="#appium.webdriver.mobilecommand.MobileCommand.TOGGLE_WIFI">TOGGLE_WIFI</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TOUCH_ACTION" href="#appium.webdriver.mobilecommand.MobileCommand.TOUCH_ACTION">TOUCH_ACTION</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.TOUCH_ID" href="#appium.webdriver.mobilecommand.MobileCommand.TOUCH_ID">TOUCH_ID</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.UNLOCK" href="#appium.webdriver.mobilecommand.MobileCommand.UNLOCK">UNLOCK</a></code></li>
+<li><code><a title="appium.webdriver.mobilecommand.MobileCommand.UPDATE_SETTINGS" href="#appium.webdriver.mobilecommand.MobileCommand.UPDATE_SETTINGS">UPDATE_SETTINGS</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

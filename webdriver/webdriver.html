@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.webdriver API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.webdriver</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# pylint: disable=too-many-lines,too-many-public-methods,too-many-statements,no-self-use
+
+import copy
+from typing import Any, Dict, List, Optional, TypeVar, Union
+
+from selenium.common.exceptions import InvalidArgumentException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.command import Command as RemoteCommand
+from selenium.webdriver.remote.remote_connection import RemoteConnection
+
+from appium.common.logger import logger
+from appium.webdriver.common.mobileby import MobileBy
+
+from .appium_connection import AppiumConnection
+from .errorhandler import MobileErrorHandler
+from .extensions.action_helpers import ActionHelpers
+from .extensions.android.activities import Activities
+from .extensions.android.common import Common
+from .extensions.android.display import Display
+from .extensions.android.gsm import Gsm
+from .extensions.android.network import Network
+from .extensions.android.performance import Performance
+from .extensions.android.power import Power
+from .extensions.android.sms import Sms
+from .extensions.android.system_bars import SystemBars
+from .extensions.applications import Applications
+from .extensions.clipboard import Clipboard
+from .extensions.context import Context
+from .extensions.device_time import DeviceTime
+from .extensions.execute_driver import ExecuteDriver
+from .extensions.execute_mobile_command import ExecuteMobileCommand
+from .extensions.hw_actions import HardwareActions
+from .extensions.images_comparison import ImagesComparison
+from .extensions.ime import IME
+from .extensions.keyboard import Keyboard
+from .extensions.location import Location
+from .extensions.log_event import LogEvent
+from .extensions.remote_fs import RemoteFS
+from .extensions.screen_record import ScreenRecord
+from .extensions.search_context import AppiumSearchContext
+from .extensions.session import Session
+from .extensions.settings import Settings
+from .mobilecommand import MobileCommand as Command
+from .switch_to import MobileSwitchTo
+from .webelement import WebElement as MobileWebElement
+
+# From remote/webdriver.py
+_W3C_CAPABILITY_NAMES = frozenset([
+    &#39;acceptInsecureCerts&#39;,
+    &#39;browserName&#39;,
+    &#39;browserVersion&#39;,
+    &#39;platformName&#39;,
+    &#39;pageLoadStrategy&#39;,
+    &#39;proxy&#39;,
+    &#39;setWindowRect&#39;,
+    &#39;timeouts&#39;,
+    &#39;unhandledPromptBehavior&#39;,
+])
+
+# From remote/webdriver.py
+_OSS_W3C_CONVERSION = {
+    &#39;acceptSslCerts&#39;: &#39;acceptInsecureCerts&#39;,
+    &#39;version&#39;: &#39;browserVersion&#39;,
+    &#39;platform&#39;: &#39;platformName&#39;
+}
+
+_EXTENSION_CAPABILITY = &#39;:&#39;
+_FORCE_MJSONWP = &#39;forceMjsonwp&#39;
+
+# override
+# Add appium prefix for the non-W3C capabilities
+
+
+def _make_w3c_caps(caps: Dict) -&gt; Dict[str, List[Dict[str, Any]]]:
+    appium_prefix = &#39;appium:&#39;
+
+    caps = copy.deepcopy(caps)
+    profile = caps.get(&#39;firefox_profile&#39;)
+    first_match = {}
+    if caps.get(&#39;proxy&#39;) and caps[&#39;proxy&#39;].get(&#39;proxyType&#39;):
+        caps[&#39;proxy&#39;][&#39;proxyType&#39;] = caps[&#39;proxy&#39;][&#39;proxyType&#39;].lower()
+    for k, v in caps.items():
+        if v and k in _OSS_W3C_CONVERSION:
+            first_match[_OSS_W3C_CONVERSION[k]] = v.lower() if k == &#39;platform&#39; else v
+        if k in _W3C_CAPABILITY_NAMES or _EXTENSION_CAPABILITY in k:
+            first_match[k] = v
+        else:
+            if not k.startswith(appium_prefix):
+                first_match[appium_prefix + k] = v
+    if profile:
+        moz_opts = first_match.get(&#39;moz:firefoxOptions&#39;, {})
+        # If it&#39;s already present, assume the caller did that intentionally.
+        if &#39;profile&#39; not in moz_opts:
+            # Don&#39;t mutate the original capabilities.
+            new_opts = copy.deepcopy(moz_opts)
+            new_opts[&#39;profile&#39;] = profile
+            first_match[&#39;moz:firefoxOptions&#39;] = new_opts
+    return {&#39;firstMatch&#39;: [first_match]}
+
+
+T = TypeVar(&#39;T&#39;, bound=&#39;WebDriver&#39;)
+
+
+class WebDriver(
+    AppiumSearchContext,
+    ActionHelpers,
+    Activities,
+    Applications,
+    Clipboard,
+    Context,
+    Common,
+    DeviceTime,
+    Display,
+    ExecuteDriver,
+    ExecuteMobileCommand,
+    Gsm,
+    HardwareActions,
+    ImagesComparison,
+    IME,
+    Keyboard,
+    Location,
+    LogEvent,
+    Network,
+    Performance,
+    Power,
+    RemoteFS,
+    ScreenRecord,
+    Session,
+    Settings,
+    Sms,
+    SystemBars
+):
+
+    def __init__(self, command_executor: str = &#39;http://127.0.0.1:4444/wd/hub&#39;,
+                 desired_capabilities: Optional[Dict] = None, browser_profile: str = None, proxy: str = None, keep_alive: bool = True, direct_connection: bool = False):
+
+        super().__init__(
+            AppiumConnection(command_executor, keep_alive=keep_alive),
+            desired_capabilities,
+            browser_profile,
+            proxy
+        )
+
+        if hasattr(self, &#39;command_executor&#39;):
+            self._addCommands()
+
+        self.error_handler = MobileErrorHandler()
+        self._switch_to = MobileSwitchTo(self)
+
+        if direct_connection:
+            self._update_command_executor(keep_alive=keep_alive)
+
+        # add new method to the `find_by_*` pantheon
+        By.IOS_UIAUTOMATION = MobileBy.IOS_UIAUTOMATION
+        By.IOS_PREDICATE = MobileBy.IOS_PREDICATE
+        By.IOS_CLASS_CHAIN = MobileBy.IOS_CLASS_CHAIN
+        By.ANDROID_UIAUTOMATOR = MobileBy.ANDROID_UIAUTOMATOR
+        By.ANDROID_VIEWTAG = MobileBy.ANDROID_VIEWTAG
+        By.WINDOWS_UI_AUTOMATION = MobileBy.WINDOWS_UI_AUTOMATION
+        By.ACCESSIBILITY_ID = MobileBy.ACCESSIBILITY_ID
+        By.IMAGE = MobileBy.IMAGE
+        By.CUSTOM = MobileBy.CUSTOM
+
+    def _update_command_executor(self, keep_alive: bool) -&gt; None:
+        &#34;&#34;&#34;Update command executor following directConnect feature&#34;&#34;&#34;
+        direct_protocol = &#39;directConnectProtocol&#39;
+        direct_host = &#39;directConnectHost&#39;
+        direct_port = &#39;directConnectPort&#39;
+        direct_path = &#39;directConnectPath&#39;
+
+        if (not {direct_protocol, direct_host, direct_port, direct_path}.issubset(set(self.capabilities))):
+            message = &#39;Direct connect capabilities from server were:\n&#39;
+            for key in [direct_protocol, direct_host, direct_port, direct_path]:
+                message += &#39;{}: \&#39;{}\&#39;\n&#39;.format(key, self.capabilities.get(key, &#39;&#39;))
+            logger.warning(message)
+            return
+
+        protocol = self.capabilities[direct_protocol]
+        hostname = self.capabilities[direct_host]
+        port = self.capabilities[direct_port]
+        path = self.capabilities[direct_path]
+        executor = f&#39;{protocol}://{hostname}:{port}{path}&#39;
+
+        logger.info(&#39;Updated request endpoint to %s&#39;, executor)
+        # Override command executor
+        self.command_executor = RemoteConnection(executor, keep_alive=keep_alive)
+        self._addCommands()
+
+    def start_session(self, capabilities: Dict, browser_profile: Optional[str] = None) -&gt; None:
+        &#34;&#34;&#34;Creates a new session with the desired capabilities.
+
+        Override for Appium
+
+        Args:
+            automation_name: The name of automation engine to use.
+            platform_name: The name of target platform.
+            platform_version: The kind of mobile device or emulator to use
+            app: The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.
+
+        Read https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md for more details.
+        &#34;&#34;&#34;
+        if not isinstance(capabilities, dict):
+            raise InvalidArgumentException(&#39;Capabilities must be a dictionary&#39;)
+        if browser_profile:
+            if &#39;moz:firefoxOptions&#39; in capabilities:
+                # encoded is defined in selenium&#39;s original codes
+                capabilities[&#39;moz:firefoxOptions&#39;][&#39;profile&#39;] = browser_profile.encoded  # type: ignore
+            else:
+                # encoded is defined in selenium&#39;s original codes
+                capabilities.update({&#39;firefox_profile&#39;: browser_profile.encoded})  # type: ignore
+
+        parameters = self._merge_capabilities(capabilities)
+
+        response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+        if &#39;sessionId&#39; not in response:
+            response = response[&#39;value&#39;]
+        self.session_id = response[&#39;sessionId&#39;]
+        self.capabilities = response.get(&#39;value&#39;)
+
+        # if capabilities is none we are probably speaking to
+        # a W3C endpoint
+        if self.capabilities is None:
+            self.capabilities = response.get(&#39;capabilities&#39;)
+
+        # Double check to see if we have a W3C Compliant browser
+        self.w3c = response.get(&#39;status&#39;) is None
+        self.command_executor.w3c = self.w3c
+
+    def _merge_capabilities(self, capabilities: Dict) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;Manage capabilities whether W3C format or MJSONWP format
+        &#34;&#34;&#34;
+        if _FORCE_MJSONWP in capabilities:
+            force_mjsonwp = capabilities[_FORCE_MJSONWP]
+            del capabilities[_FORCE_MJSONWP]
+
+            if force_mjsonwp != False:
+                return {&#39;desiredCapabilities&#39;: capabilities}
+
+        w3c_caps = _make_w3c_caps(capabilities)
+        return {&#39;capabilities&#39;: w3c_caps, &#39;desiredCapabilities&#39;: capabilities}
+
+    def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; MobileWebElement:
+        &#34;&#34;&#34;&#39;Private&#39; method used by the find_element_by_* methods.
+
+        Override for Appium
+
+        Usage:
+            Use the corresponding find_element_by_* instead of this.
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+
+        :rtype: `MobileWebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self.w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self.execute(RemoteCommand.FIND_ELEMENT, {
+            &#39;using&#39;: by,
+            &#39;value&#39;: value})[&#39;value&#39;]
+
+    def find_elements(self, by: str = By.ID, value: Union[str, Dict]
+                      = None) -&gt; Union[List[MobileWebElement], List]:
+        &#34;&#34;&#34;&#39;Private&#39; method used by the find_elements_by_* methods.
+
+        Override for Appium
+
+        Usage:
+            Use the corresponding find_elements_by_* instead of this.
+
+        Returns:
+            :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+
+        :rtype: list of `MobileWebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self.w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        # Return empty list if driver returns null
+        # See https://github.com/SeleniumHQ/selenium/issues/4555
+
+        return self.execute(RemoteCommand.FIND_ELEMENTS, {
+            &#39;using&#39;: by,
+            &#39;value&#39;: value})[&#39;value&#39;] or []
+
+    def create_web_element(self, element_id: int, w3c: bool = False) -&gt; MobileWebElement:
+        &#34;&#34;&#34;Creates a web element with the specified element_id.
+
+        Overrides method in Selenium WebDriver in order to always give them
+        Appium WebElement
+
+        Args:
+            element_id (int): The element id to create a web element
+            w3c (bool): Whether the element is W3C or MJSONWP
+
+        Returns:
+            `MobileWebElement`
+        &#34;&#34;&#34;
+        return MobileWebElement(self, element_id, w3c)
+
+    def set_value(self, element: MobileWebElement, value: str) -&gt; T:
+        &#34;&#34;&#34;Set the value on an element in the application.
+
+        Args:
+            element (`appium.webdriver.webelement.WebElement`: the element whose value will be set
+            value (str): the value to set on the element
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: element.id,
+            &#39;value&#39;: [value],
+        }
+        self.execute(Command.SET_IMMEDIATE_VALUE, data)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        # call the overridden command binders from all mixin classes except for
+        # appium.webdriver.webdriver.WebDriver and its sub-classes
+        # https://github.com/appium/python-client/issues/342
+        for mixin_class in filter(lambda x: not issubclass(x, WebDriver), self.__class__.__mro__):
+            if hasattr(mixin_class, self._addCommands.__name__):
+                getattr(mixin_class, self._addCommands.__name__, None)(self)
+
+        self.command_executor._commands[Command.TOUCH_ACTION] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/touch/perform&#39;)
+        self.command_executor._commands[Command.MULTI_ACTION] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/touch/multi/perform&#39;)
+        self.command_executor._commands[Command.SET_IMMEDIATE_VALUE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/element/$id/value&#39;)
+
+        # TODO Move commands for element to webelement
+        self.command_executor._commands[Command.REPLACE_KEYS] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/element/$id/replace_value&#39;)
+        self.command_executor._commands[Command.CLEAR] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/element/$id/clear&#39;)
+        self.command_executor._commands[Command.LOCATION_IN_VIEW] = \
+            (&#39;GET&#39;, &#39;/session/$sessionId/element/$id/location_in_view&#39;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.webdriver.WebDriver"><code class="flex name class">
+<span>class <span class="ident">WebDriver</span></span>
+<span>(</span><span>command_executor='http://127.0.0.1:4444/wd/hub', desired_capabilities=None, browser_profile=None, proxy=None, keep_alive=True, direct_connection=False)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns appium driver search conext</p>
+<p>Create a new driver that will issue commands using the wire protocol.</p>
+<p>:Args:
+- command_executor - Either a string representing URL of the remote server or a custom
+remote_connection.RemoteConnection object. Defaults to 'http://127.0.0.1:4444/wd/hub'.
+- desired_capabilities - A dictionary of capabilities to request when
+starting the browser session. Required parameter.
+- browser_profile - A selenium.webdriver.firefox.firefox_profile.FirefoxProfile object.
+Only used if Firefox is requested. Optional.
+- proxy - A selenium.webdriver.common.proxy.Proxy object. The browser session will
+be started with given proxy settings, if possible. Optional.
+- keep_alive - Whether to configure remote_connection.RemoteConnection to use
+HTTP keep-alive. Defaults to False.
+- file_detector - Pass custom file detector object during instantiation. If None,
+then default LocalFileDetector() will be used.
+- options - instance of a driver options.Options class</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WebDriver(
+    AppiumSearchContext,
+    ActionHelpers,
+    Activities,
+    Applications,
+    Clipboard,
+    Context,
+    Common,
+    DeviceTime,
+    Display,
+    ExecuteDriver,
+    ExecuteMobileCommand,
+    Gsm,
+    HardwareActions,
+    ImagesComparison,
+    IME,
+    Keyboard,
+    Location,
+    LogEvent,
+    Network,
+    Performance,
+    Power,
+    RemoteFS,
+    ScreenRecord,
+    Session,
+    Settings,
+    Sms,
+    SystemBars
+):
+
+    def __init__(self, command_executor: str = &#39;http://127.0.0.1:4444/wd/hub&#39;,
+                 desired_capabilities: Optional[Dict] = None, browser_profile: str = None, proxy: str = None, keep_alive: bool = True, direct_connection: bool = False):
+
+        super().__init__(
+            AppiumConnection(command_executor, keep_alive=keep_alive),
+            desired_capabilities,
+            browser_profile,
+            proxy
+        )
+
+        if hasattr(self, &#39;command_executor&#39;):
+            self._addCommands()
+
+        self.error_handler = MobileErrorHandler()
+        self._switch_to = MobileSwitchTo(self)
+
+        if direct_connection:
+            self._update_command_executor(keep_alive=keep_alive)
+
+        # add new method to the `find_by_*` pantheon
+        By.IOS_UIAUTOMATION = MobileBy.IOS_UIAUTOMATION
+        By.IOS_PREDICATE = MobileBy.IOS_PREDICATE
+        By.IOS_CLASS_CHAIN = MobileBy.IOS_CLASS_CHAIN
+        By.ANDROID_UIAUTOMATOR = MobileBy.ANDROID_UIAUTOMATOR
+        By.ANDROID_VIEWTAG = MobileBy.ANDROID_VIEWTAG
+        By.WINDOWS_UI_AUTOMATION = MobileBy.WINDOWS_UI_AUTOMATION
+        By.ACCESSIBILITY_ID = MobileBy.ACCESSIBILITY_ID
+        By.IMAGE = MobileBy.IMAGE
+        By.CUSTOM = MobileBy.CUSTOM
+
+    def _update_command_executor(self, keep_alive: bool) -&gt; None:
+        &#34;&#34;&#34;Update command executor following directConnect feature&#34;&#34;&#34;
+        direct_protocol = &#39;directConnectProtocol&#39;
+        direct_host = &#39;directConnectHost&#39;
+        direct_port = &#39;directConnectPort&#39;
+        direct_path = &#39;directConnectPath&#39;
+
+        if (not {direct_protocol, direct_host, direct_port, direct_path}.issubset(set(self.capabilities))):
+            message = &#39;Direct connect capabilities from server were:\n&#39;
+            for key in [direct_protocol, direct_host, direct_port, direct_path]:
+                message += &#39;{}: \&#39;{}\&#39;\n&#39;.format(key, self.capabilities.get(key, &#39;&#39;))
+            logger.warning(message)
+            return
+
+        protocol = self.capabilities[direct_protocol]
+        hostname = self.capabilities[direct_host]
+        port = self.capabilities[direct_port]
+        path = self.capabilities[direct_path]
+        executor = f&#39;{protocol}://{hostname}:{port}{path}&#39;
+
+        logger.info(&#39;Updated request endpoint to %s&#39;, executor)
+        # Override command executor
+        self.command_executor = RemoteConnection(executor, keep_alive=keep_alive)
+        self._addCommands()
+
+    def start_session(self, capabilities: Dict, browser_profile: Optional[str] = None) -&gt; None:
+        &#34;&#34;&#34;Creates a new session with the desired capabilities.
+
+        Override for Appium
+
+        Args:
+            automation_name: The name of automation engine to use.
+            platform_name: The name of target platform.
+            platform_version: The kind of mobile device or emulator to use
+            app: The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.
+
+        Read https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md for more details.
+        &#34;&#34;&#34;
+        if not isinstance(capabilities, dict):
+            raise InvalidArgumentException(&#39;Capabilities must be a dictionary&#39;)
+        if browser_profile:
+            if &#39;moz:firefoxOptions&#39; in capabilities:
+                # encoded is defined in selenium&#39;s original codes
+                capabilities[&#39;moz:firefoxOptions&#39;][&#39;profile&#39;] = browser_profile.encoded  # type: ignore
+            else:
+                # encoded is defined in selenium&#39;s original codes
+                capabilities.update({&#39;firefox_profile&#39;: browser_profile.encoded})  # type: ignore
+
+        parameters = self._merge_capabilities(capabilities)
+
+        response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+        if &#39;sessionId&#39; not in response:
+            response = response[&#39;value&#39;]
+        self.session_id = response[&#39;sessionId&#39;]
+        self.capabilities = response.get(&#39;value&#39;)
+
+        # if capabilities is none we are probably speaking to
+        # a W3C endpoint
+        if self.capabilities is None:
+            self.capabilities = response.get(&#39;capabilities&#39;)
+
+        # Double check to see if we have a W3C Compliant browser
+        self.w3c = response.get(&#39;status&#39;) is None
+        self.command_executor.w3c = self.w3c
+
+    def _merge_capabilities(self, capabilities: Dict) -&gt; Dict[str, Any]:
+        &#34;&#34;&#34;Manage capabilities whether W3C format or MJSONWP format
+        &#34;&#34;&#34;
+        if _FORCE_MJSONWP in capabilities:
+            force_mjsonwp = capabilities[_FORCE_MJSONWP]
+            del capabilities[_FORCE_MJSONWP]
+
+            if force_mjsonwp != False:
+                return {&#39;desiredCapabilities&#39;: capabilities}
+
+        w3c_caps = _make_w3c_caps(capabilities)
+        return {&#39;capabilities&#39;: w3c_caps, &#39;desiredCapabilities&#39;: capabilities}
+
+    def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; MobileWebElement:
+        &#34;&#34;&#34;&#39;Private&#39; method used by the find_element_by_* methods.
+
+        Override for Appium
+
+        Usage:
+            Use the corresponding find_element_by_* instead of this.
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+
+        :rtype: `MobileWebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self.w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self.execute(RemoteCommand.FIND_ELEMENT, {
+            &#39;using&#39;: by,
+            &#39;value&#39;: value})[&#39;value&#39;]
+
+    def find_elements(self, by: str = By.ID, value: Union[str, Dict]
+                      = None) -&gt; Union[List[MobileWebElement], List]:
+        &#34;&#34;&#34;&#39;Private&#39; method used by the find_elements_by_* methods.
+
+        Override for Appium
+
+        Usage:
+            Use the corresponding find_elements_by_* instead of this.
+
+        Returns:
+            :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+
+        :rtype: list of `MobileWebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self.w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        # Return empty list if driver returns null
+        # See https://github.com/SeleniumHQ/selenium/issues/4555
+
+        return self.execute(RemoteCommand.FIND_ELEMENTS, {
+            &#39;using&#39;: by,
+            &#39;value&#39;: value})[&#39;value&#39;] or []
+
+    def create_web_element(self, element_id: int, w3c: bool = False) -&gt; MobileWebElement:
+        &#34;&#34;&#34;Creates a web element with the specified element_id.
+
+        Overrides method in Selenium WebDriver in order to always give them
+        Appium WebElement
+
+        Args:
+            element_id (int): The element id to create a web element
+            w3c (bool): Whether the element is W3C or MJSONWP
+
+        Returns:
+            `MobileWebElement`
+        &#34;&#34;&#34;
+        return MobileWebElement(self, element_id, w3c)
+
+    def set_value(self, element: MobileWebElement, value: str) -&gt; T:
+        &#34;&#34;&#34;Set the value on an element in the application.
+
+        Args:
+            element (`appium.webdriver.webelement.WebElement`: the element whose value will be set
+            value (str): the value to set on the element
+
+        Returns:
+            `appium.webdriver.webdriver.WebDriver`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: element.id,
+            &#39;value&#39;: [value],
+        }
+        self.execute(Command.SET_IMMEDIATE_VALUE, data)
+        return self
+
+    # pylint: disable=protected-access
+
+    def _addCommands(self) -&gt; None:
+        # call the overridden command binders from all mixin classes except for
+        # appium.webdriver.webdriver.WebDriver and its sub-classes
+        # https://github.com/appium/python-client/issues/342
+        for mixin_class in filter(lambda x: not issubclass(x, WebDriver), self.__class__.__mro__):
+            if hasattr(mixin_class, self._addCommands.__name__):
+                getattr(mixin_class, self._addCommands.__name__, None)(self)
+
+        self.command_executor._commands[Command.TOUCH_ACTION] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/touch/perform&#39;)
+        self.command_executor._commands[Command.MULTI_ACTION] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/touch/multi/perform&#39;)
+        self.command_executor._commands[Command.SET_IMMEDIATE_VALUE] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/element/$id/value&#39;)
+
+        # TODO Move commands for element to webelement
+        self.command_executor._commands[Command.REPLACE_KEYS] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/appium/element/$id/replace_value&#39;)
+        self.command_executor._commands[Command.CLEAR] = \
+            (&#39;POST&#39;, &#39;/session/$sessionId/element/$id/clear&#39;)
+        self.command_executor._commands[Command.LOCATION_IN_VIEW] = \
+            (&#39;GET&#39;, &#39;/session/$sessionId/element/$id/location_in_view&#39;)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="appium.webdriver.extensions.search_context.AppiumSearchContext" href="extensions/search_context/index.html#appium.webdriver.extensions.search_context.AppiumSearchContext">AppiumSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.action_helpers.ActionHelpers" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers">ActionHelpers</a></li>
+<li><a title="appium.webdriver.extensions.android.activities.Activities" href="extensions/android/activities.html#appium.webdriver.extensions.android.activities.Activities">Activities</a></li>
+<li><a title="appium.webdriver.extensions.applications.Applications" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications">Applications</a></li>
+<li><a title="appium.webdriver.extensions.clipboard.Clipboard" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard">Clipboard</a></li>
+<li><a title="appium.webdriver.extensions.context.Context" href="extensions/context.html#appium.webdriver.extensions.context.Context">Context</a></li>
+<li><a title="appium.webdriver.extensions.android.common.Common" href="extensions/android/common.html#appium.webdriver.extensions.android.common.Common">Common</a></li>
+<li><a title="appium.webdriver.extensions.device_time.DeviceTime" href="extensions/device_time.html#appium.webdriver.extensions.device_time.DeviceTime">DeviceTime</a></li>
+<li><a title="appium.webdriver.extensions.android.display.Display" href="extensions/android/display.html#appium.webdriver.extensions.android.display.Display">Display</a></li>
+<li><a title="appium.webdriver.extensions.execute_driver.ExecuteDriver" href="extensions/execute_driver.html#appium.webdriver.extensions.execute_driver.ExecuteDriver">ExecuteDriver</a></li>
+<li><a title="appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand" href="extensions/execute_mobile_command.html#appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand">ExecuteMobileCommand</a></li>
+<li><a title="appium.webdriver.extensions.android.gsm.Gsm" href="extensions/android/gsm.html#appium.webdriver.extensions.android.gsm.Gsm">Gsm</a></li>
+<li><a title="appium.webdriver.extensions.hw_actions.HardwareActions" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions">HardwareActions</a></li>
+<li><a title="appium.webdriver.extensions.images_comparison.ImagesComparison" href="extensions/images_comparison.html#appium.webdriver.extensions.images_comparison.ImagesComparison">ImagesComparison</a></li>
+<li><a title="appium.webdriver.extensions.ime.IME" href="extensions/ime.html#appium.webdriver.extensions.ime.IME">IME</a></li>
+<li><a title="appium.webdriver.extensions.keyboard.Keyboard" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard">Keyboard</a></li>
+<li><a title="appium.webdriver.extensions.location.Location" href="extensions/location.html#appium.webdriver.extensions.location.Location">Location</a></li>
+<li><a title="appium.webdriver.extensions.log_event.LogEvent" href="extensions/log_event.html#appium.webdriver.extensions.log_event.LogEvent">LogEvent</a></li>
+<li><a title="appium.webdriver.extensions.android.network.Network" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network">Network</a></li>
+<li><a title="appium.webdriver.extensions.android.performance.Performance" href="extensions/android/performance.html#appium.webdriver.extensions.android.performance.Performance">Performance</a></li>
+<li><a title="appium.webdriver.extensions.android.power.Power" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power">Power</a></li>
+<li><a title="appium.webdriver.extensions.remote_fs.RemoteFS" href="extensions/remote_fs.html#appium.webdriver.extensions.remote_fs.RemoteFS">RemoteFS</a></li>
+<li><a title="appium.webdriver.extensions.screen_record.ScreenRecord" href="extensions/screen_record.html#appium.webdriver.extensions.screen_record.ScreenRecord">ScreenRecord</a></li>
+<li><a title="appium.webdriver.extensions.session.Session" href="extensions/session.html#appium.webdriver.extensions.session.Session">Session</a></li>
+<li><a title="appium.webdriver.extensions.settings.Settings" href="extensions/settings.html#appium.webdriver.extensions.settings.Settings">Settings</a></li>
+<li><a title="appium.webdriver.extensions.android.sms.Sms" href="extensions/android/sms.html#appium.webdriver.extensions.android.sms.Sms">Sms</a></li>
+<li><a title="appium.webdriver.extensions.android.system_bars.SystemBars" href="extensions/android/system_bars.html#appium.webdriver.extensions.android.system_bars.SystemBars">SystemBars</a></li>
+<li>selenium.webdriver.remote.webdriver.WebDriver</li>
+<li><a title="appium.webdriver.extensions.search_context.android.AndroidSearchContext" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext">AndroidSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.custom.CustomSearchContext" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext">CustomSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.ios.iOSSearchContext" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext">iOSSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.mobile.MobileSearchContext" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext">MobileSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.windows.WindowsSearchContext" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext">WindowsSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.base_search_context.BaseSearchContext" href="extensions/search_context/base_search_context.html#appium.webdriver.extensions.search_context.base_search_context.BaseSearchContext">BaseSearchContext</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="appium.webdriver.webdriver.WebDriver.create_web_element"><code class="name flex">
+<span>def <span class="ident">create_web_element</span></span>(<span>self, element_id, w3c=False)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Creates a web element with the specified element_id.</p>
+<p>Overrides method in Selenium WebDriver in order to always give them
+Appium WebElement</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>element_id</code></strong> :&ensp;<code>int</code></dt>
+<dd>The element id to create a web element</dd>
+<dt><strong><code>w3c</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Whether the element is W3C or MJSONWP</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><code>MobileWebElement</code></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def create_web_element(self, element_id: int, w3c: bool = False) -&gt; MobileWebElement:
+    &#34;&#34;&#34;Creates a web element with the specified element_id.
+
+    Overrides method in Selenium WebDriver in order to always give them
+    Appium WebElement
+
+    Args:
+        element_id (int): The element id to create a web element
+        w3c (bool): Whether the element is W3C or MJSONWP
+
+    Returns:
+        `MobileWebElement`
+    &#34;&#34;&#34;
+    return MobileWebElement(self, element_id, w3c)</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webdriver.WebDriver.find_element"><code class="name flex">
+<span>def <span class="ident">find_element</span></span>(<span>self, by='id', value=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>'Private' method used by the find_element_by_* methods.</p>
+<p>Override for Appium</p>
+<h2 id="usage">Usage</h2>
+<p>Use the corresponding find_element_by_* instead of this.</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webelement.WebElement" href="webelement.html#appium.webdriver.webelement.WebElement"><code>WebElement</code></a>
+:rtype: <code>MobileWebElement</code></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; MobileWebElement:
+    &#34;&#34;&#34;&#39;Private&#39; method used by the find_element_by_* methods.
+
+    Override for Appium
+
+    Usage:
+        Use the corresponding find_element_by_* instead of this.
+
+    Returns:
+        `appium.webdriver.webelement.WebElement`
+
+    :rtype: `MobileWebElement`
+    &#34;&#34;&#34;
+    # TODO: If we need, we should enable below converter for Web context
+    # if self.w3c:
+    #     if by == By.ID:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+    #     elif by == By.TAG_NAME:
+    #         by = By.CSS_SELECTOR
+    #     elif by == By.CLASS_NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#34;.%s&#34; % value
+    #     elif by == By.NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+    return self.execute(RemoteCommand.FIND_ELEMENT, {
+        &#39;using&#39;: by,
+        &#39;value&#39;: value})[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webdriver.WebDriver.find_elements"><code class="name flex">
+<span>def <span class="ident">find_elements</span></span>(<span>self, by='id', value=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>'Private' method used by the find_elements_by_* methods.</p>
+<p>Override for Appium</p>
+<h2 id="usage">Usage</h2>
+<p>Use the corresponding find_elements_by_* instead of this.</p>
+<h2 id="returns">Returns</h2>
+<p>:obj:<code>list</code> of :obj:<a title="appium.webdriver.webelement.WebElement" href="webelement.html#appium.webdriver.webelement.WebElement"><code>WebElement</code></a>
+:rtype: list of <code>MobileWebElement</code></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_elements(self, by: str = By.ID, value: Union[str, Dict]
+                  = None) -&gt; Union[List[MobileWebElement], List]:
+    &#34;&#34;&#34;&#39;Private&#39; method used by the find_elements_by_* methods.
+
+    Override for Appium
+
+    Usage:
+        Use the corresponding find_elements_by_* instead of this.
+
+    Returns:
+        :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+
+    :rtype: list of `MobileWebElement`
+    &#34;&#34;&#34;
+    # TODO: If we need, we should enable below converter for Web context
+    # if self.w3c:
+    #     if by == By.ID:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+    #     elif by == By.TAG_NAME:
+    #         by = By.CSS_SELECTOR
+    #     elif by == By.CLASS_NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#34;.%s&#34; % value
+    #     elif by == By.NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+    # Return empty list if driver returns null
+    # See https://github.com/SeleniumHQ/selenium/issues/4555
+
+    return self.execute(RemoteCommand.FIND_ELEMENTS, {
+        &#39;using&#39;: by,
+        &#39;value&#39;: value})[&#39;value&#39;] or []</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webdriver.WebDriver.set_value"><code class="name flex">
+<span>def <span class="ident">set_value</span></span>(<span>self, element, value)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Set the value on an element in the application.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt>element (<a title="appium.webdriver.webelement.WebElement" href="webelement.html#appium.webdriver.webelement.WebElement"><code>WebElement</code></a>: the element whose value will be set</dt>
+<dt><strong><code>value</code></strong> :&ensp;<code>str</code></dt>
+<dd>the value to set on the element</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webdriver.WebDriver" href="#appium.webdriver.webdriver.WebDriver"><code>WebDriver</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_value(self, element: MobileWebElement, value: str) -&gt; T:
+    &#34;&#34;&#34;Set the value on an element in the application.
+
+    Args:
+        element (`appium.webdriver.webelement.WebElement`: the element whose value will be set
+        value (str): the value to set on the element
+
+    Returns:
+        `appium.webdriver.webdriver.WebDriver`
+    &#34;&#34;&#34;
+    data = {
+        &#39;id&#39;: element.id,
+        &#39;value&#39;: [value],
+    }
+    self.execute(Command.SET_IMMEDIATE_VALUE, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webdriver.WebDriver.start_session"><code class="name flex">
+<span>def <span class="ident">start_session</span></span>(<span>self, capabilities, browser_profile=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Creates a new session with the desired capabilities.</p>
+<p>Override for Appium</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>automation_name</code></strong></dt>
+<dd>The name of automation engine to use.</dd>
+<dt><strong><code>platform_name</code></strong></dt>
+<dd>The name of target platform.</dd>
+<dt><strong><code>platform_version</code></strong></dt>
+<dd>The kind of mobile device or emulator to use</dd>
+<dt><strong><code>app</code></strong></dt>
+<dd>The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.</dd>
+</dl>
+<p>Read <a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md">https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md</a> for more details.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def start_session(self, capabilities: Dict, browser_profile: Optional[str] = None) -&gt; None:
+    &#34;&#34;&#34;Creates a new session with the desired capabilities.
+
+    Override for Appium
+
+    Args:
+        automation_name: The name of automation engine to use.
+        platform_name: The name of target platform.
+        platform_version: The kind of mobile device or emulator to use
+        app: The absolute local path or remote http URL to an .ipa or .apk file, or a .zip containing one of these.
+
+    Read https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md for more details.
+    &#34;&#34;&#34;
+    if not isinstance(capabilities, dict):
+        raise InvalidArgumentException(&#39;Capabilities must be a dictionary&#39;)
+    if browser_profile:
+        if &#39;moz:firefoxOptions&#39; in capabilities:
+            # encoded is defined in selenium&#39;s original codes
+            capabilities[&#39;moz:firefoxOptions&#39;][&#39;profile&#39;] = browser_profile.encoded  # type: ignore
+        else:
+            # encoded is defined in selenium&#39;s original codes
+            capabilities.update({&#39;firefox_profile&#39;: browser_profile.encoded})  # type: ignore
+
+    parameters = self._merge_capabilities(capabilities)
+
+    response = self.execute(RemoteCommand.NEW_SESSION, parameters)
+    if &#39;sessionId&#39; not in response:
+        response = response[&#39;value&#39;]
+    self.session_id = response[&#39;sessionId&#39;]
+    self.capabilities = response.get(&#39;value&#39;)
+
+    # if capabilities is none we are probably speaking to
+    # a W3C endpoint
+    if self.capabilities is None:
+        self.capabilities = response.get(&#39;capabilities&#39;)
+
+    # Double check to see if we have a W3C Compliant browser
+    self.w3c = response.get(&#39;status&#39;) is None
+    self.command_executor.w3c = self.w3c</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="appium.webdriver.extensions.search_context.AppiumSearchContext" href="extensions/search_context/index.html#appium.webdriver.extensions.search_context.AppiumSearchContext">AppiumSearchContext</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_accessibility_id" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_element_by_accessibility_id">find_element_by_accessibility_id</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_android_data_matcher" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_data_matcher">find_element_by_android_data_matcher</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_android_uiautomator" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_uiautomator">find_element_by_android_uiautomator</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_android_viewtag" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_viewtag">find_element_by_android_viewtag</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_custom" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext.find_element_by_custom">find_element_by_custom</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_image" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_element_by_image">find_element_by_image</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_ios_class_chain" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_class_chain">find_element_by_ios_class_chain</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_ios_predicate" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_predicate">find_element_by_ios_predicate</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_ios_uiautomation" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_uiautomation">find_element_by_ios_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_element_by_windows_uiautomation" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext.find_element_by_windows_uiautomation">find_element_by_windows_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_accessibility_id" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_elements_by_accessibility_id">find_elements_by_accessibility_id</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_android_data_matcher" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_data_matcher">find_elements_by_android_data_matcher</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_android_uiautomator" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_uiautomator">find_elements_by_android_uiautomator</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_android_viewtag" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_viewtag">find_elements_by_android_viewtag</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_custom" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext.find_elements_by_custom">find_elements_by_custom</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_image" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_elements_by_image">find_elements_by_image</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_ios_class_chain" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_class_chain">find_elements_by_ios_class_chain</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_ios_predicate" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_predicate">find_elements_by_ios_predicate</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_ios_uiautomation" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_uiautomation">find_elements_by_ios_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumSearchContext.find_elements_by_windows_uiautomation" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext.find_elements_by_windows_uiautomation">find_elements_by_windows_uiautomation</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.action_helpers.ActionHelpers" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers">ActionHelpers</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.action_helpers.ActionHelpers.drag_and_drop" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers.drag_and_drop">drag_and_drop</a></code></li>
+<li><code><a title="appium.webdriver.extensions.action_helpers.ActionHelpers.flick" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers.flick">flick</a></code></li>
+<li><code><a title="appium.webdriver.extensions.action_helpers.ActionHelpers.scroll" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers.scroll">scroll</a></code></li>
+<li><code><a title="appium.webdriver.extensions.action_helpers.ActionHelpers.swipe" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers.swipe">swipe</a></code></li>
+<li><code><a title="appium.webdriver.extensions.action_helpers.ActionHelpers.tap" href="extensions/action_helpers.html#appium.webdriver.extensions.action_helpers.ActionHelpers.tap">tap</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.activities.Activities" href="extensions/android/activities.html#appium.webdriver.extensions.android.activities.Activities">Activities</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.activities.Activities.current_activity" href="extensions/android/activities.html#appium.webdriver.extensions.android.activities.Activities.current_activity">current_activity</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.activities.Activities.start_activity" href="extensions/android/activities.html#appium.webdriver.extensions.android.activities.Activities.start_activity">start_activity</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.activities.Activities.wait_activity" href="extensions/android/activities.html#appium.webdriver.extensions.android.activities.Activities.wait_activity">wait_activity</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.applications.Applications" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications">Applications</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.applications.Applications.activate_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.activate_app">activate_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.app_strings" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.app_strings">app_strings</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.background_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.background_app">background_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.close_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.close_app">close_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.install_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.install_app">install_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.is_app_installed" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.is_app_installed">is_app_installed</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.launch_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.launch_app">launch_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.query_app_state" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.query_app_state">query_app_state</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.remove_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.remove_app">remove_app</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.reset" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.reset">reset</a></code></li>
+<li><code><a title="appium.webdriver.extensions.applications.Applications.terminate_app" href="extensions/applications.html#appium.webdriver.extensions.applications.Applications.terminate_app">terminate_app</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.clipboard.Clipboard" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard">Clipboard</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.clipboard.Clipboard.get_clipboard" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard.get_clipboard">get_clipboard</a></code></li>
+<li><code><a title="appium.webdriver.extensions.clipboard.Clipboard.get_clipboard_text" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard.get_clipboard_text">get_clipboard_text</a></code></li>
+<li><code><a title="appium.webdriver.extensions.clipboard.Clipboard.set_clipboard" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard.set_clipboard">set_clipboard</a></code></li>
+<li><code><a title="appium.webdriver.extensions.clipboard.Clipboard.set_clipboard_text" href="extensions/clipboard.html#appium.webdriver.extensions.clipboard.Clipboard.set_clipboard_text">set_clipboard_text</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.context.Context" href="extensions/context.html#appium.webdriver.extensions.context.Context">Context</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.context.Context.context" href="extensions/context.html#appium.webdriver.extensions.context.Context.context">context</a></code></li>
+<li><code><a title="appium.webdriver.extensions.context.Context.contexts" href="extensions/context.html#appium.webdriver.extensions.context.Context.contexts">contexts</a></code></li>
+<li><code><a title="appium.webdriver.extensions.context.Context.current_context" href="extensions/context.html#appium.webdriver.extensions.context.Context.current_context">current_context</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.common.Common" href="extensions/android/common.html#appium.webdriver.extensions.android.common.Common">Common</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.common.Common.current_package" href="extensions/android/common.html#appium.webdriver.extensions.android.common.Common.current_package">current_package</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.common.Common.end_test_coverage" href="extensions/android/common.html#appium.webdriver.extensions.android.common.Common.end_test_coverage">end_test_coverage</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.common.Common.open_notifications" href="extensions/android/common.html#appium.webdriver.extensions.android.common.Common.open_notifications">open_notifications</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.device_time.DeviceTime" href="extensions/device_time.html#appium.webdriver.extensions.device_time.DeviceTime">DeviceTime</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.device_time.DeviceTime.device_time" href="extensions/device_time.html#appium.webdriver.extensions.device_time.DeviceTime.device_time">device_time</a></code></li>
+<li><code><a title="appium.webdriver.extensions.device_time.DeviceTime.get_device_time" href="extensions/device_time.html#appium.webdriver.extensions.device_time.DeviceTime.get_device_time">get_device_time</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.display.Display" href="extensions/android/display.html#appium.webdriver.extensions.android.display.Display">Display</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.display.Display.get_display_density" href="extensions/android/display.html#appium.webdriver.extensions.android.display.Display.get_display_density">get_display_density</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.execute_driver.ExecuteDriver" href="extensions/execute_driver.html#appium.webdriver.extensions.execute_driver.ExecuteDriver">ExecuteDriver</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.execute_driver.ExecuteDriver.execute_driver" href="extensions/execute_driver.html#appium.webdriver.extensions.execute_driver.ExecuteDriver.execute_driver">execute_driver</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand" href="extensions/execute_mobile_command.html#appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand">ExecuteMobileCommand</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand.battery_info" href="extensions/execute_mobile_command.html#appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand.battery_info">battery_info</a></code></li>
+<li><code><a title="appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand.press_button" href="extensions/execute_mobile_command.html#appium.webdriver.extensions.execute_mobile_command.ExecuteMobileCommand.press_button">press_button</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.gsm.Gsm" href="extensions/android/gsm.html#appium.webdriver.extensions.android.gsm.Gsm">Gsm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.gsm.Gsm.make_gsm_call" href="extensions/android/gsm.html#appium.webdriver.extensions.android.gsm.Gsm.make_gsm_call">make_gsm_call</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.gsm.Gsm.set_gsm_signal" href="extensions/android/gsm.html#appium.webdriver.extensions.android.gsm.Gsm.set_gsm_signal">set_gsm_signal</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.gsm.Gsm.set_gsm_voice" href="extensions/android/gsm.html#appium.webdriver.extensions.android.gsm.Gsm.set_gsm_voice">set_gsm_voice</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.hw_actions.HardwareActions" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions">HardwareActions</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.finger_print" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.finger_print">finger_print</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.is_locked" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.is_locked">is_locked</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.lock" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.lock">lock</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.shake" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.shake">shake</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.toggle_touch_id_enrollment" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.toggle_touch_id_enrollment">toggle_touch_id_enrollment</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.touch_id" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.touch_id">touch_id</a></code></li>
+<li><code><a title="appium.webdriver.extensions.hw_actions.HardwareActions.unlock" href="extensions/hw_actions.html#appium.webdriver.extensions.hw_actions.HardwareActions.unlock">unlock</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.images_comparison.ImagesComparison" href="extensions/images_comparison.html#appium.webdriver.extensions.images_comparison.ImagesComparison">ImagesComparison</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.images_comparison.ImagesComparison.find_image_occurrence" href="extensions/images_comparison.html#appium.webdriver.extensions.images_comparison.ImagesComparison.find_image_occurrence">find_image_occurrence</a></code></li>
+<li><code><a title="appium.webdriver.extensions.images_comparison.ImagesComparison.get_images_similarity" href="extensions/images_comparison.html#appium.webdriver.extensions.images_comparison.ImagesComparison.get_images_similarity">get_images_similarity</a></code></li>
+<li><code><a title="appium.webdriver.extensions.images_comparison.ImagesComparison.match_images_features" href="extensions/images_comparison.html#appium.webdriver.extensions.images_comparison.ImagesComparison.match_images_features">match_images_features</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.ime.IME" href="extensions/ime.html#appium.webdriver.extensions.ime.IME">IME</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.ime.IME.activate_ime_engine" href="extensions/ime.html#appium.webdriver.extensions.ime.IME.activate_ime_engine">activate_ime_engine</a></code></li>
+<li><code><a title="appium.webdriver.extensions.ime.IME.active_ime_engine" href="extensions/ime.html#appium.webdriver.extensions.ime.IME.active_ime_engine">active_ime_engine</a></code></li>
+<li><code><a title="appium.webdriver.extensions.ime.IME.available_ime_engines" href="extensions/ime.html#appium.webdriver.extensions.ime.IME.available_ime_engines">available_ime_engines</a></code></li>
+<li><code><a title="appium.webdriver.extensions.ime.IME.deactivate_ime_engine" href="extensions/ime.html#appium.webdriver.extensions.ime.IME.deactivate_ime_engine">deactivate_ime_engine</a></code></li>
+<li><code><a title="appium.webdriver.extensions.ime.IME.is_ime_active" href="extensions/ime.html#appium.webdriver.extensions.ime.IME.is_ime_active">is_ime_active</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.keyboard.Keyboard" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard">Keyboard</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.keyboard.Keyboard.hide_keyboard" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard.hide_keyboard">hide_keyboard</a></code></li>
+<li><code><a title="appium.webdriver.extensions.keyboard.Keyboard.is_keyboard_shown" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard.is_keyboard_shown">is_keyboard_shown</a></code></li>
+<li><code><a title="appium.webdriver.extensions.keyboard.Keyboard.keyevent" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard.keyevent">keyevent</a></code></li>
+<li><code><a title="appium.webdriver.extensions.keyboard.Keyboard.long_press_keycode" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard.long_press_keycode">long_press_keycode</a></code></li>
+<li><code><a title="appium.webdriver.extensions.keyboard.Keyboard.press_keycode" href="extensions/keyboard.html#appium.webdriver.extensions.keyboard.Keyboard.press_keycode">press_keycode</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.location.Location" href="extensions/location.html#appium.webdriver.extensions.location.Location">Location</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.location.Location.location" href="extensions/location.html#appium.webdriver.extensions.location.Location.location">location</a></code></li>
+<li><code><a title="appium.webdriver.extensions.location.Location.set_location" href="extensions/location.html#appium.webdriver.extensions.location.Location.set_location">set_location</a></code></li>
+<li><code><a title="appium.webdriver.extensions.location.Location.toggle_location_services" href="extensions/location.html#appium.webdriver.extensions.location.Location.toggle_location_services">toggle_location_services</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.log_event.LogEvent" href="extensions/log_event.html#appium.webdriver.extensions.log_event.LogEvent">LogEvent</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.log_event.LogEvent.get_events" href="extensions/log_event.html#appium.webdriver.extensions.log_event.LogEvent.get_events">get_events</a></code></li>
+<li><code><a title="appium.webdriver.extensions.log_event.LogEvent.log_event" href="extensions/log_event.html#appium.webdriver.extensions.log_event.LogEvent.log_event">log_event</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.network.Network" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network">Network</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.network.Network.network_connection" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network.network_connection">network_connection</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.network.Network.set_network_connection" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network.set_network_connection">set_network_connection</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.network.Network.set_network_speed" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network.set_network_speed">set_network_speed</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.network.Network.toggle_wifi" href="extensions/android/network.html#appium.webdriver.extensions.android.network.Network.toggle_wifi">toggle_wifi</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.performance.Performance" href="extensions/android/performance.html#appium.webdriver.extensions.android.performance.Performance">Performance</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.performance.Performance.get_performance_data" href="extensions/android/performance.html#appium.webdriver.extensions.android.performance.Performance.get_performance_data">get_performance_data</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.performance.Performance.get_performance_data_types" href="extensions/android/performance.html#appium.webdriver.extensions.android.performance.Performance.get_performance_data_types">get_performance_data_types</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.power.Power" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power">Power</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.power.Power.AC_OFF" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power.AC_OFF">AC_OFF</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.power.Power.AC_ON" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power.AC_ON">AC_ON</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.power.Power.set_power_ac" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power.set_power_ac">set_power_ac</a></code></li>
+<li><code><a title="appium.webdriver.extensions.android.power.Power.set_power_capacity" href="extensions/android/power.html#appium.webdriver.extensions.android.power.Power.set_power_capacity">set_power_capacity</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.remote_fs.RemoteFS" href="extensions/remote_fs.html#appium.webdriver.extensions.remote_fs.RemoteFS">RemoteFS</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.pull_file" href="extensions/remote_fs.html#appium.webdriver.extensions.remote_fs.RemoteFS.pull_file">pull_file</a></code></li>
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.pull_folder" href="extensions/remote_fs.html#appium.webdriver.extensions.remote_fs.RemoteFS.pull_folder">pull_folder</a></code></li>
+<li><code><a title="appium.webdriver.extensions.remote_fs.RemoteFS.push_file" href="extensions/remote_fs.html#appium.webdriver.extensions.remote_fs.RemoteFS.push_file">push_file</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.screen_record.ScreenRecord" href="extensions/screen_record.html#appium.webdriver.extensions.screen_record.ScreenRecord">ScreenRecord</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.screen_record.ScreenRecord.start_recording_screen" href="extensions/screen_record.html#appium.webdriver.extensions.screen_record.ScreenRecord.start_recording_screen">start_recording_screen</a></code></li>
+<li><code><a title="appium.webdriver.extensions.screen_record.ScreenRecord.stop_recording_screen" href="extensions/screen_record.html#appium.webdriver.extensions.screen_record.ScreenRecord.stop_recording_screen">stop_recording_screen</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.session.Session" href="extensions/session.html#appium.webdriver.extensions.session.Session">Session</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.session.Session.all_sessions" href="extensions/session.html#appium.webdriver.extensions.session.Session.all_sessions">all_sessions</a></code></li>
+<li><code><a title="appium.webdriver.extensions.session.Session.events" href="extensions/session.html#appium.webdriver.extensions.session.Session.events">events</a></code></li>
+<li><code><a title="appium.webdriver.extensions.session.Session.session" href="extensions/session.html#appium.webdriver.extensions.session.Session.session">session</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.settings.Settings" href="extensions/settings.html#appium.webdriver.extensions.settings.Settings">Settings</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.settings.Settings.get_settings" href="extensions/settings.html#appium.webdriver.extensions.settings.Settings.get_settings">get_settings</a></code></li>
+<li><code><a title="appium.webdriver.extensions.settings.Settings.update_settings" href="extensions/settings.html#appium.webdriver.extensions.settings.Settings.update_settings">update_settings</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.sms.Sms" href="extensions/android/sms.html#appium.webdriver.extensions.android.sms.Sms">Sms</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.sms.Sms.send_sms" href="extensions/android/sms.html#appium.webdriver.extensions.android.sms.Sms.send_sms">send_sms</a></code></li>
+</ul>
+</li>
+<li><code><b><a title="appium.webdriver.extensions.android.system_bars.SystemBars" href="extensions/android/system_bars.html#appium.webdriver.extensions.android.system_bars.SystemBars">SystemBars</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.android.system_bars.SystemBars.get_system_bars" href="extensions/android/system_bars.html#appium.webdriver.extensions.android.system_bars.SystemBars.get_system_bars">get_system_bars</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver" href="index.html">appium.webdriver</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.webdriver.WebDriver" href="#appium.webdriver.webdriver.WebDriver">WebDriver</a></code></h4>
+<ul class="">
+<li><code><a title="appium.webdriver.webdriver.WebDriver.create_web_element" href="#appium.webdriver.webdriver.WebDriver.create_web_element">create_web_element</a></code></li>
+<li><code><a title="appium.webdriver.webdriver.WebDriver.find_element" href="#appium.webdriver.webdriver.WebDriver.find_element">find_element</a></code></li>
+<li><code><a title="appium.webdriver.webdriver.WebDriver.find_elements" href="#appium.webdriver.webdriver.WebDriver.find_elements">find_elements</a></code></li>
+<li><code><a title="appium.webdriver.webdriver.WebDriver.set_value" href="#appium.webdriver.webdriver.WebDriver.set_value">set_value</a></code></li>
+<li><code><a title="appium.webdriver.webdriver.WebDriver.start_session" href="#appium.webdriver.webdriver.WebDriver.start_session">start_session</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>

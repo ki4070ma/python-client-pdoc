@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.7.2" />
+<title>appium.webdriver.webelement API documentation</title>
+<meta name="description" content="" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>appium.webdriver.webelement</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#!/usr/bin/env python
+
+# Licensed under the Apache License, Version 2.0 (the &#34;License&#34;);
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an &#34;AS IS&#34; BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from typing import Dict, List, Optional, TypeVar, Union
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.command import Command as RemoteCommand
+
+from .extensions.search_context import AppiumWebElementSearchContext
+from .mobilecommand import MobileCommand as Command
+
+T = TypeVar(&#39;T&#39;, bound=&#39;WebElement&#39;)
+
+
+class WebElement(AppiumWebElementSearchContext):
+    def get_attribute(self, name: str) -&gt; Optional[str]:
+        &#34;&#34;&#34;Gets the given attribute or property of the element.
+
+        Override for Appium
+
+        This method will first try to return the value of a property with the
+        given name. If a property with that name doesn&#39;t exist, it returns the
+        value of the attribute with the same name. If there&#39;s no attribute with
+        that name, ``None`` is returned.
+
+        Values which are considered truthy, that is equals &#34;true&#34; or &#34;false&#34;,
+        are returned as booleans.  All other non-``None`` values are returned
+        as strings.  For attributes or properties which do not exist, ``None``
+        is returned.
+
+        Args:
+            name (str): Name of the attribute/property to retrieve.
+
+        Usage:
+            # Check if the &#34;active&#34; CSS class is applied to an element.
+            is_active = &#34;active&#34; in target_element.get_attribute(&#34;class&#34;)
+
+        Returns:
+            str: The given attribute or property of the element
+        &#34;&#34;&#34;
+
+        resp = self._execute(RemoteCommand.GET_ELEMENT_ATTRIBUTE, {&#39;name&#39;: name})
+        attributeValue = resp.get(&#39;value&#39;)
+
+        if attributeValue is None:
+            return None
+
+        # Convert to str along to the spec
+        if not isinstance(attributeValue, str):
+            attributeValue = str(attributeValue)
+
+        if name != &#39;value&#39; and attributeValue.lower() in (&#39;true&#39;, &#39;false&#39;):
+            return attributeValue.lower()
+
+        return attributeValue
+
+    def is_displayed(self) -&gt; bool:
+        &#34;&#34;&#34;Whether the element is visible to a user.
+
+        Override for Appium
+        &#34;&#34;&#34;
+        return self._execute(RemoteCommand.IS_ELEMENT_DISPLAYED)[&#39;value&#39;]
+
+    def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; T:
+        &#34;&#34;&#34;Find an element given a By strategy and locator
+
+        Override for Appium
+
+        Prefer the find_element_by_* methods when possible.
+
+        Args:
+            by (:obj:`str`, optional): The strategy
+            value (:obj:`str`, optional): The locator
+
+        Usage:
+            element = element.find_element(By.ID, &#39;foo&#39;)
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self._w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self._execute(RemoteCommand.FIND_CHILD_ELEMENT,
+                             {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]
+
+    def find_elements(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; List[T]:
+        &#34;&#34;&#34;Find elements given a By strategy and locator
+
+        Override for Appium
+
+        Prefer the find_elements_by_* methods when possible.
+
+        Args:
+            by (:obj:`str`, optional): The strategy
+            value (:obj:`str`, optional): The locator
+
+        Usage:
+            element = element.find_elements(By.CLASS_NAME, &#39;foo&#39;)
+
+        Returns:
+            :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self._w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self._execute(RemoteCommand.FIND_CHILD_ELEMENTS,
+                             {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]
+
+    def clear(self) -&gt; T:
+        &#34;&#34;&#34;Clears text.
+
+        Override for Appium
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {&#39;id&#39;: self.id}
+        self._execute(Command.CLEAR, data)
+        return self
+
+    def set_text(self, keys: str = &#39;&#39;) -&gt; T:
+        &#34;&#34;&#34;Sends text to the element.
+
+        Previous text is removed.
+        Android only.
+
+        Args:
+            keys (str): the text to be sent to the element.
+
+        Usage:
+            element.set_text(&#39;some text&#39;)
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: self._id,
+            &#39;value&#39;: [keys]
+        }
+        self._execute(Command.REPLACE_KEYS, data)
+        return self
+
+    @property
+    def location_in_view(self) -&gt; Dict[str, int]:
+        &#34;&#34;&#34;Gets the location of an element relative to the view.
+
+        Usage:
+            location = element.location_in_view
+            x = location[&#39;x&#39;]
+            y = location[&#39;y&#39;]
+
+        Returns:
+            dict: The location of an element relative to the view
+        &#34;&#34;&#34;
+        return self._execute(Command.LOCATION_IN_VIEW)[&#39;value&#39;]
+
+    def set_value(self, value: str) -&gt; T:
+        &#34;&#34;&#34;Set the value on this element in the application
+
+        Args:
+            value (str): The value to be set
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: self.id,
+            &#39;value&#39;: [value],
+        }
+        self._execute(Command.SET_IMMEDIATE_VALUE, data)
+        return self</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="appium.webdriver.webelement.WebElement"><code class="flex name class">
+<span>class <span class="ident">WebElement</span></span>
+<span>(</span><span>parent, id_, w3c=False)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns appium web element search context</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class WebElement(AppiumWebElementSearchContext):
+    def get_attribute(self, name: str) -&gt; Optional[str]:
+        &#34;&#34;&#34;Gets the given attribute or property of the element.
+
+        Override for Appium
+
+        This method will first try to return the value of a property with the
+        given name. If a property with that name doesn&#39;t exist, it returns the
+        value of the attribute with the same name. If there&#39;s no attribute with
+        that name, ``None`` is returned.
+
+        Values which are considered truthy, that is equals &#34;true&#34; or &#34;false&#34;,
+        are returned as booleans.  All other non-``None`` values are returned
+        as strings.  For attributes or properties which do not exist, ``None``
+        is returned.
+
+        Args:
+            name (str): Name of the attribute/property to retrieve.
+
+        Usage:
+            # Check if the &#34;active&#34; CSS class is applied to an element.
+            is_active = &#34;active&#34; in target_element.get_attribute(&#34;class&#34;)
+
+        Returns:
+            str: The given attribute or property of the element
+        &#34;&#34;&#34;
+
+        resp = self._execute(RemoteCommand.GET_ELEMENT_ATTRIBUTE, {&#39;name&#39;: name})
+        attributeValue = resp.get(&#39;value&#39;)
+
+        if attributeValue is None:
+            return None
+
+        # Convert to str along to the spec
+        if not isinstance(attributeValue, str):
+            attributeValue = str(attributeValue)
+
+        if name != &#39;value&#39; and attributeValue.lower() in (&#39;true&#39;, &#39;false&#39;):
+            return attributeValue.lower()
+
+        return attributeValue
+
+    def is_displayed(self) -&gt; bool:
+        &#34;&#34;&#34;Whether the element is visible to a user.
+
+        Override for Appium
+        &#34;&#34;&#34;
+        return self._execute(RemoteCommand.IS_ELEMENT_DISPLAYED)[&#39;value&#39;]
+
+    def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; T:
+        &#34;&#34;&#34;Find an element given a By strategy and locator
+
+        Override for Appium
+
+        Prefer the find_element_by_* methods when possible.
+
+        Args:
+            by (:obj:`str`, optional): The strategy
+            value (:obj:`str`, optional): The locator
+
+        Usage:
+            element = element.find_element(By.ID, &#39;foo&#39;)
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self._w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self._execute(RemoteCommand.FIND_CHILD_ELEMENT,
+                             {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]
+
+    def find_elements(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; List[T]:
+        &#34;&#34;&#34;Find elements given a By strategy and locator
+
+        Override for Appium
+
+        Prefer the find_elements_by_* methods when possible.
+
+        Args:
+            by (:obj:`str`, optional): The strategy
+            value (:obj:`str`, optional): The locator
+
+        Usage:
+            element = element.find_elements(By.CLASS_NAME, &#39;foo&#39;)
+
+        Returns:
+            :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        # TODO: If we need, we should enable below converter for Web context
+        # if self._w3c:
+        #     if by == By.ID:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+        #     elif by == By.TAG_NAME:
+        #         by = By.CSS_SELECTOR
+        #     elif by == By.CLASS_NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#34;.%s&#34; % value
+        #     elif by == By.NAME:
+        #         by = By.CSS_SELECTOR
+        #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+        return self._execute(RemoteCommand.FIND_CHILD_ELEMENTS,
+                             {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]
+
+    def clear(self) -&gt; T:
+        &#34;&#34;&#34;Clears text.
+
+        Override for Appium
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {&#39;id&#39;: self.id}
+        self._execute(Command.CLEAR, data)
+        return self
+
+    def set_text(self, keys: str = &#39;&#39;) -&gt; T:
+        &#34;&#34;&#34;Sends text to the element.
+
+        Previous text is removed.
+        Android only.
+
+        Args:
+            keys (str): the text to be sent to the element.
+
+        Usage:
+            element.set_text(&#39;some text&#39;)
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: self._id,
+            &#39;value&#39;: [keys]
+        }
+        self._execute(Command.REPLACE_KEYS, data)
+        return self
+
+    @property
+    def location_in_view(self) -&gt; Dict[str, int]:
+        &#34;&#34;&#34;Gets the location of an element relative to the view.
+
+        Usage:
+            location = element.location_in_view
+            x = location[&#39;x&#39;]
+            y = location[&#39;y&#39;]
+
+        Returns:
+            dict: The location of an element relative to the view
+        &#34;&#34;&#34;
+        return self._execute(Command.LOCATION_IN_VIEW)[&#39;value&#39;]
+
+    def set_value(self, value: str) -&gt; T:
+        &#34;&#34;&#34;Set the value on this element in the application
+
+        Args:
+            value (str): The value to be set
+
+        Returns:
+            `appium.webdriver.webelement.WebElement`
+        &#34;&#34;&#34;
+        data = {
+            &#39;id&#39;: self.id,
+            &#39;value&#39;: [value],
+        }
+        self._execute(Command.SET_IMMEDIATE_VALUE, data)
+        return self</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext" href="extensions/search_context/index.html#appium.webdriver.extensions.search_context.AppiumWebElementSearchContext">AppiumWebElementSearchContext</a></li>
+<li>selenium.webdriver.remote.webelement.WebElement</li>
+<li><a title="appium.webdriver.extensions.search_context.android.AndroidSearchContext" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext">AndroidSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.custom.CustomSearchContext" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext">CustomSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.ios.iOSSearchContext" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext">iOSSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.mobile.MobileSearchContext" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext">MobileSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.windows.WindowsSearchContext" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext">WindowsSearchContext</a></li>
+<li><a title="appium.webdriver.extensions.search_context.base_search_context.BaseSearchContext" href="extensions/search_context/base_search_context.html#appium.webdriver.extensions.search_context.base_search_context.BaseSearchContext">BaseSearchContext</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="appium.webdriver.webelement.WebElement.location_in_view"><code class="name">var <span class="ident">location_in_view</span></code></dt>
+<dd>
+<section class="desc"><p>Gets the location of an element relative to the view.</p>
+<h2 id="usage">Usage</h2>
+<p>location = element.location_in_view
+x = location['x']
+y = location['y']</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>dict</code></strong></dt>
+<dd>The location of an element relative to the view</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def location_in_view(self) -&gt; Dict[str, int]:
+    &#34;&#34;&#34;Gets the location of an element relative to the view.
+
+    Usage:
+        location = element.location_in_view
+        x = location[&#39;x&#39;]
+        y = location[&#39;y&#39;]
+
+    Returns:
+        dict: The location of an element relative to the view
+    &#34;&#34;&#34;
+    return self._execute(Command.LOCATION_IN_VIEW)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="appium.webdriver.webelement.WebElement.clear"><code class="name flex">
+<span>def <span class="ident">clear</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Clears text.</p>
+<p>Override for Appium</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement"><code>WebElement</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def clear(self) -&gt; T:
+    &#34;&#34;&#34;Clears text.
+
+    Override for Appium
+
+    Returns:
+        `appium.webdriver.webelement.WebElement`
+    &#34;&#34;&#34;
+    data = {&#39;id&#39;: self.id}
+    self._execute(Command.CLEAR, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.find_element"><code class="name flex">
+<span>def <span class="ident">find_element</span></span>(<span>self, by='id', value=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Find an element given a By strategy and locator</p>
+<p>Override for Appium</p>
+<p>Prefer the find_element_by_* methods when possible.</p>
+<h2 id="args">Args</h2>
+<p>by (:obj:<code>str</code>, optional): The strategy
+value (:obj:<code>str</code>, optional): The locator</p>
+<h2 id="usage">Usage</h2>
+<p>element = element.find_element(By.ID, 'foo')</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement"><code>WebElement</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; T:
+    &#34;&#34;&#34;Find an element given a By strategy and locator
+
+    Override for Appium
+
+    Prefer the find_element_by_* methods when possible.
+
+    Args:
+        by (:obj:`str`, optional): The strategy
+        value (:obj:`str`, optional): The locator
+
+    Usage:
+        element = element.find_element(By.ID, &#39;foo&#39;)
+
+    Returns:
+        `appium.webdriver.webelement.WebElement`
+    &#34;&#34;&#34;
+    # TODO: If we need, we should enable below converter for Web context
+    # if self._w3c:
+    #     if by == By.ID:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+    #     elif by == By.TAG_NAME:
+    #         by = By.CSS_SELECTOR
+    #     elif by == By.CLASS_NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#34;.%s&#34; % value
+    #     elif by == By.NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+    return self._execute(RemoteCommand.FIND_CHILD_ELEMENT,
+                         {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.find_elements"><code class="name flex">
+<span>def <span class="ident">find_elements</span></span>(<span>self, by='id', value=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Find elements given a By strategy and locator</p>
+<p>Override for Appium</p>
+<p>Prefer the find_elements_by_* methods when possible.</p>
+<h2 id="args">Args</h2>
+<p>by (:obj:<code>str</code>, optional): The strategy
+value (:obj:<code>str</code>, optional): The locator</p>
+<h2 id="usage">Usage</h2>
+<p>element = element.find_elements(By.CLASS_NAME, 'foo')</p>
+<h2 id="returns">Returns</h2>
+<p>:obj:<code>list</code> of :obj:<a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement"><code>WebElement</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_elements(self, by: str = By.ID, value: Union[str, Dict] = None) -&gt; List[T]:
+    &#34;&#34;&#34;Find elements given a By strategy and locator
+
+    Override for Appium
+
+    Prefer the find_elements_by_* methods when possible.
+
+    Args:
+        by (:obj:`str`, optional): The strategy
+        value (:obj:`str`, optional): The locator
+
+    Usage:
+        element = element.find_elements(By.CLASS_NAME, &#39;foo&#39;)
+
+    Returns:
+        :obj:`list` of :obj:`appium.webdriver.webelement.WebElement`
+    &#34;&#34;&#34;
+    # TODO: If we need, we should enable below converter for Web context
+    # if self._w3c:
+    #     if by == By.ID:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[id=&#34;%s&#34;]&#39; % value
+    #     elif by == By.TAG_NAME:
+    #         by = By.CSS_SELECTOR
+    #     elif by == By.CLASS_NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#34;.%s&#34; % value
+    #     elif by == By.NAME:
+    #         by = By.CSS_SELECTOR
+    #         value = &#39;[name=&#34;%s&#34;]&#39; % value
+
+    return self._execute(RemoteCommand.FIND_CHILD_ELEMENTS,
+                         {&#34;using&#34;: by, &#34;value&#34;: value})[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.get_attribute"><code class="name flex">
+<span>def <span class="ident">get_attribute</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Gets the given attribute or property of the element.</p>
+<p>Override for Appium</p>
+<p>This method will first try to return the value of a property with the
+given name. If a property with that name doesn't exist, it returns the
+value of the attribute with the same name. If there's no attribute with
+that name, <code>None</code> is returned.</p>
+<p>Values which are considered truthy, that is equals "true" or "false",
+are returned as booleans.
+All other non-<code>None</code> values are returned
+as strings.
+For attributes or properties which do not exist, <code>None</code>
+is returned.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>name</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the attribute/property to retrieve.</dd>
+</dl>
+<h2 id="usage">Usage</h2>
+<h1 id="check-if-the-active-css-class-is-applied-to-an-element">Check if the "active" CSS class is applied to an element.</h1>
+<p>is_active = "active" in target_element.get_attribute("class")</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>str</code></strong></dt>
+<dd>The given attribute or property of the element</dd>
+</dl></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_attribute(self, name: str) -&gt; Optional[str]:
+    &#34;&#34;&#34;Gets the given attribute or property of the element.
+
+    Override for Appium
+
+    This method will first try to return the value of a property with the
+    given name. If a property with that name doesn&#39;t exist, it returns the
+    value of the attribute with the same name. If there&#39;s no attribute with
+    that name, ``None`` is returned.
+
+    Values which are considered truthy, that is equals &#34;true&#34; or &#34;false&#34;,
+    are returned as booleans.  All other non-``None`` values are returned
+    as strings.  For attributes or properties which do not exist, ``None``
+    is returned.
+
+    Args:
+        name (str): Name of the attribute/property to retrieve.
+
+    Usage:
+        # Check if the &#34;active&#34; CSS class is applied to an element.
+        is_active = &#34;active&#34; in target_element.get_attribute(&#34;class&#34;)
+
+    Returns:
+        str: The given attribute or property of the element
+    &#34;&#34;&#34;
+
+    resp = self._execute(RemoteCommand.GET_ELEMENT_ATTRIBUTE, {&#39;name&#39;: name})
+    attributeValue = resp.get(&#39;value&#39;)
+
+    if attributeValue is None:
+        return None
+
+    # Convert to str along to the spec
+    if not isinstance(attributeValue, str):
+        attributeValue = str(attributeValue)
+
+    if name != &#39;value&#39; and attributeValue.lower() in (&#39;true&#39;, &#39;false&#39;):
+        return attributeValue.lower()
+
+    return attributeValue</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.is_displayed"><code class="name flex">
+<span>def <span class="ident">is_displayed</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Whether the element is visible to a user.</p>
+<p>Override for Appium</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_displayed(self) -&gt; bool:
+    &#34;&#34;&#34;Whether the element is visible to a user.
+
+    Override for Appium
+    &#34;&#34;&#34;
+    return self._execute(RemoteCommand.IS_ELEMENT_DISPLAYED)[&#39;value&#39;]</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.set_text"><code class="name flex">
+<span>def <span class="ident">set_text</span></span>(<span>self, keys='')</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Sends text to the element.</p>
+<p>Previous text is removed.
+Android only.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>keys</code></strong> :&ensp;<code>str</code></dt>
+<dd>the text to be sent to the element.</dd>
+</dl>
+<h2 id="usage">Usage</h2>
+<p>element.set_text('some text')</p>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement"><code>WebElement</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_text(self, keys: str = &#39;&#39;) -&gt; T:
+    &#34;&#34;&#34;Sends text to the element.
+
+    Previous text is removed.
+    Android only.
+
+    Args:
+        keys (str): the text to be sent to the element.
+
+    Usage:
+        element.set_text(&#39;some text&#39;)
+
+    Returns:
+        `appium.webdriver.webelement.WebElement`
+    &#34;&#34;&#34;
+    data = {
+        &#39;id&#39;: self._id,
+        &#39;value&#39;: [keys]
+    }
+    self._execute(Command.REPLACE_KEYS, data)
+    return self</code></pre>
+</details>
+</dd>
+<dt id="appium.webdriver.webelement.WebElement.set_value"><code class="name flex">
+<span>def <span class="ident">set_value</span></span>(<span>self, value)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Set the value on this element in the application</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>value</code></strong> :&ensp;<code>str</code></dt>
+<dd>The value to be set</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p><a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement"><code>WebElement</code></a></p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_value(self, value: str) -&gt; T:
+    &#34;&#34;&#34;Set the value on this element in the application
+
+    Args:
+        value (str): The value to be set
+
+    Returns:
+        `appium.webdriver.webelement.WebElement`
+    &#34;&#34;&#34;
+    data = {
+        &#39;id&#39;: self.id,
+        &#39;value&#39;: [value],
+    }
+    self._execute(Command.SET_IMMEDIATE_VALUE, data)
+    return self</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext" href="extensions/search_context/index.html#appium.webdriver.extensions.search_context.AppiumWebElementSearchContext">AppiumWebElementSearchContext</a></b></code>:
+<ul class="hlist">
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_accessibility_id" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_element_by_accessibility_id">find_element_by_accessibility_id</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_android_data_matcher" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_data_matcher">find_element_by_android_data_matcher</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_android_uiautomator" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_uiautomator">find_element_by_android_uiautomator</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_android_viewtag" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_element_by_android_viewtag">find_element_by_android_viewtag</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_custom" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext.find_element_by_custom">find_element_by_custom</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_image" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_element_by_image">find_element_by_image</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_ios_class_chain" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_class_chain">find_element_by_ios_class_chain</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_ios_predicate" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_predicate">find_element_by_ios_predicate</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_ios_uiautomation" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_element_by_ios_uiautomation">find_element_by_ios_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_element_by_windows_uiautomation" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext.find_element_by_windows_uiautomation">find_element_by_windows_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_accessibility_id" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_elements_by_accessibility_id">find_elements_by_accessibility_id</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_android_data_matcher" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_data_matcher">find_elements_by_android_data_matcher</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_android_uiautomator" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_uiautomator">find_elements_by_android_uiautomator</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_android_viewtag" href="extensions/search_context/android.html#appium.webdriver.extensions.search_context.android.AndroidSearchContext.find_elements_by_android_viewtag">find_elements_by_android_viewtag</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_custom" href="extensions/search_context/custom.html#appium.webdriver.extensions.search_context.custom.CustomSearchContext.find_elements_by_custom">find_elements_by_custom</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_image" href="extensions/search_context/mobile.html#appium.webdriver.extensions.search_context.mobile.MobileSearchContext.find_elements_by_image">find_elements_by_image</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_ios_class_chain" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_class_chain">find_elements_by_ios_class_chain</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_ios_predicate" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_predicate">find_elements_by_ios_predicate</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_ios_uiautomation" href="extensions/search_context/ios.html#appium.webdriver.extensions.search_context.ios.iOSSearchContext.find_elements_by_ios_uiautomation">find_elements_by_ios_uiautomation</a></code></li>
+<li><code><a title="appium.webdriver.extensions.search_context.AppiumWebElementSearchContext.find_elements_by_windows_uiautomation" href="extensions/search_context/windows.html#appium.webdriver.extensions.search_context.windows.WindowsSearchContext.find_elements_by_windows_uiautomation">find_elements_by_windows_uiautomation</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="appium.webdriver" href="index.html">appium.webdriver</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="appium.webdriver.webelement.WebElement" href="#appium.webdriver.webelement.WebElement">WebElement</a></code></h4>
+<ul class="two-column">
+<li><code><a title="appium.webdriver.webelement.WebElement.clear" href="#appium.webdriver.webelement.WebElement.clear">clear</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.find_element" href="#appium.webdriver.webelement.WebElement.find_element">find_element</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.find_elements" href="#appium.webdriver.webelement.WebElement.find_elements">find_elements</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.get_attribute" href="#appium.webdriver.webelement.WebElement.get_attribute">get_attribute</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.is_displayed" href="#appium.webdriver.webelement.WebElement.is_displayed">is_displayed</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.location_in_view" href="#appium.webdriver.webelement.WebElement.location_in_view">location_in_view</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.set_text" href="#appium.webdriver.webelement.WebElement.set_text">set_text</a></code></li>
+<li><code><a title="appium.webdriver.webelement.WebElement.set_value" href="#appium.webdriver.webelement.WebElement.set_value">set_value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.2</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
